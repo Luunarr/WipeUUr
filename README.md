@@ -47,20 +47,20 @@ Before running the script, you need to install the required Python packages. Use
 4. Follow the on-screen prompts to use the tool.
 
 # Commands
-- help      - Display the command menu
-- clear     - Start cleaning
-- clearhist - Clean browser histories
-- clearbin  - Clean recycle bin
-- flushdns  - Flush DNS cache
-- tempfiles - Clean temporary files
-- defrag    - Defragment the hard drive
-- Idisk     - Get disk information
-- Ios       - Get OS information
-- exit      - Exit the tool
-- support   - Get technical support on Discord
-- info      - Display system or application info
-- github    - Access the GitHub repository for this tool
-- mygithub  - Access my personal GitHub profile
+- `help`      - Display the command menu
+- `clear`     - Start cleaning
+- `clearhist` - Clean browser histories
+- `clearbin`  - Clean recycle bin
+- `flushdns`  - Flush DNS cache
+- `tempfiles` - Clean temporary files
+- `defrag`    - Defragment the hard drive
+- `Idisk`     - Get disk information
+- `Ios`       - Get OS information
+- `exit`      - Exit the tool
+- `support`   - Get technical support on Discord
+- `info`      - Display system or application info
+- `github`    - Access the GitHub repository for this tool
+- `mygithub`  - Access my personal GitHub profile
 
 # Contact
 - **GitHub:** [Luunarr/WipeUUr](https://github.com/Luunarr/WipeUUr)
