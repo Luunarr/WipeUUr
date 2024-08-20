@@ -26,8 +26,7 @@
 import os 
 import subprocess
 import winshell
-import shutil
-import sqlite3
+import webbrowser
 from colorama import *
 
 init(autoreset=True)
@@ -69,18 +68,61 @@ def WipeUUr():
     while True: 
         asciiprint()
         Wi = input(prompt)
-        if Wi in ["h", "help", "Help", "H"]:
+        if Wi in ["h", "H", "help", "Help"]:
             helpW()
         elif Wi == "exit":
             exit()
         elif Wi == "clear":
             clearW()
+        elif Wi == "github":
+            webbrowser.open("https://github.com/Luunarr/WipeUUr")  
+            print(f"{Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr/WipeUUr {Style.RESET_ALL}")
+            Winput()
+        elif Wi == "mygithub":
+            webbrowser.open("https://github.com/Luunarr")    
+            print(f"{Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr {Style.RESET_ALL}")
+            Winput()
+        elif Wi == "info":
+            Winfo()
+        elif Wi == "support":
+            webbrowser.open("https://discord.gg/zACVRwCSve")  
+            print(f"{Style.BRIGHT}{Fore.CYAN}https://discord.gg/zACVRwCSve {Style.RESET_ALL}")
+            Winput()
         elif Wi == "clearhist":
             clearhistW()
         elif Wi == "clearbin":
             clearbinW()
         elif Wi == "flushdns":
-            flushdnsW()    
+            flushdnsW()  
+            
+def Winfo():
+    asciiprint()
+    Info = """
+                    WipeUUr
+                    By Lunar
+                  Version: 0.1#Wip
+
+   Description:
+   WipeUUr is a command-line utility designed to clean up
+   your system by clearing browser histories, emptying
+   the recycle bin, and flushing the DNS cache. This tool
+   is in its early development phase and aims to provide
+   a simple yet effective way to maintain your system's
+   cleanliness.
+
+   Copyright (c) 2024 Lunar
+
+   License:
+   This project is licensed under the Apache License 2.0 - see
+   the LICENSE file for details.
+
+   Contact:
+   For any questions or feedback, please reach out to:
+   GitHub: https://github.com/Luunarr/WipeUUr
+   Discord: https://discord.gg/zACVRwCSve"""
+    print()
+    Winput()
+      
 def helpW():
     asciiprint()
     Help = f"""{h} {Style.BRIGHT}{Fore.CYAN}Commands  Utilities
@@ -89,8 +131,12 @@ def helpW():
   clear     {Fore.RED}|{Fore.CYAN}  Start cleaning
   clearhist {Fore.RED}|{Fore.CYAN}  Clean web history
   clearbin  {Fore.RED}|{Fore.CYAN}  Clean recycle bin
-  flushdns  {Fore.RED}|{Fore.CYAN}  Clean DNS
-  exit      {Fore.RED}|{Fore.CYAN}  Exit WipeUUr"""
+  flushdns  {Fore.RED}|{Fore.CYAN}  Clean DNS cache
+  exit      {Fore.RED}|{Fore.CYAN}  Exit WipeUUr
+  support   {Fore.RED}|{Fore.CYAN}  Get technical support on Discord
+  info      {Fore.RED}|{Fore.CYAN}  Display system or application info
+  github    {Fore.RED}|{Fore.CYAN}  Access the GitHub repository for this tool
+  mygithub  {Fore.RED}|{Fore.CYAN}  Access my personal GitHub profile"""
     print(Help)
     Winput() 
     
