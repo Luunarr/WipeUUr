@@ -90,7 +90,7 @@ def helpW():
   clearhist {Fore.RED}|{Fore.CYAN}  Clean web history
   clearbin  {Fore.RED}|{Fore.CYAN}  Clean recycle bin
   flushdns  {Fore.RED}|{Fore.CYAN}  Clean DNS
-  exit      {Fore.RED}|{Fore.CYAN}  Exit GuiClean"""
+  exit      {Fore.RED}|{Fore.CYAN}  Exit WipeUUr"""
     print(Help)
     Winput() 
     
