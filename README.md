@@ -29,7 +29,7 @@ Before running the script, you need to install the required Python packages. Use
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/WipeUUr.git
+    git clone https://github.com/Luunarr/WipeUUr.git
     ```
 
 2. Navigate to the project directory:
