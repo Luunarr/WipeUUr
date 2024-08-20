@@ -57,7 +57,6 @@ Before running the script, you need to install the required Python packages. Use
 - info      - Display system or application info
 - github    - Access the GitHub repository for this tool
 - mygithub  - Access my personal GitHub profile
-- update    - Update the tool to the latest version
 
 # Contact
 - **GitHub:** [Luunarr/WipeUUr](https://github.com/Luunarr/WipeUUr)
