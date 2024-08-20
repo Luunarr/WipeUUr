@@ -23,6 +23,7 @@
 #   Discord: https://discord.gg/zACVRwCSve
 ##################################################
 
+import tempfile
 import os 
 import subprocess
 import winshell
@@ -94,7 +95,11 @@ def WipeUUr():
             clearbinW()
         elif Wi == "flushdns":
             flushdnsW()  
-            
+        elif Wi == "tempfiles":
+            tempfilesW()  
+        elif Wi == "defrag":
+            defragW()  
+                                    
 def Winfo():
     asciiprint()
     Info = f"""{Style.BRIGHT}{Fore.CYAN}
@@ -125,18 +130,25 @@ def Winfo():
       
 def helpW():
     asciiprint()
-    Help = f"""{h} {Style.BRIGHT}{Fore.CYAN}Commands  Utilities
+    Help = f"""{h} {Style.BRIGHT}{Fore.CYAN}Commands     Utilities
   {Fore.RED}_________________________________{Fore.CYAN}
-  help      {Fore.RED}|{Fore.CYAN}  Display this menu
-  clear     {Fore.RED}|{Fore.CYAN}  Start cleaning
-  clearhist {Fore.RED}|{Fore.CYAN}  Clean web history
-  clearbin  {Fore.RED}|{Fore.CYAN}  Clean recycle bin
-  flushdns  {Fore.RED}|{Fore.CYAN}  Clean DNS cache
-  exit      {Fore.RED}|{Fore.CYAN}  Exit WipeUUr
-  support   {Fore.RED}|{Fore.CYAN}  Get technical support on Discord
-  info      {Fore.RED}|{Fore.CYAN}  Display system or application info
-  github    {Fore.RED}|{Fore.CYAN}  Access the GitHub repository for this tool
-  mygithub  {Fore.RED}|{Fore.CYAN}  Access my personal GitHub profile"""
+  help       {Fore.RED}|{Fore.CYAN}  Display this menu
+  {Fore.RED}_________________________________{Fore.CYAN}
+  clear      {Fore.RED}|{Fore.CYAN}  Start cleaning
+  clearhist  {Fore.RED}|{Fore.CYAN}  Clean web history
+  clearbin   {Fore.RED}|{Fore.CYAN}  Clean recycle bin
+  flushdns   {Fore.RED}|{Fore.CYAN}  Clean DNS cache
+  tempfiles  {Fore.RED}|{Fore.CYAN}  Clean temporary files
+  defrag     {Fore.RED}|{Fore.CYAN}  Defragment the hard drive
+  {Fore.RED}_________________________________{Fore.CYAN}
+  Idisk      {Fore.RED}|{Fore.CYAN}  Get disk information
+  Ios        {Fore.RED}|{Fore.CYAN}  Get OS information
+  {Fore.RED}_________________________________{Fore.CYAN}
+  exit       {Fore.RED}|{Fore.CYAN}  Exit WipeUUr
+  support    {Fore.RED}|{Fore.CYAN}  Get technical support on Discord
+  info       {Fore.RED}|{Fore.CYAN}  Display system or application info
+  github     {Fore.RED}|{Fore.CYAN}  Access the GitHub repository for this tool
+  mygithub   {Fore.RED}|{Fore.CYAN}  Access my personal GitHub profile"""
     print(Help)
     Winput() 
     
@@ -189,6 +201,38 @@ def flushdnsW():
         print(f"{p} {Style.BRIGHT}{Fore.CYAN}Your DNS has been cleared")
     except:
         print(f"{m} {Style.BRIGHT}{Fore.CYAN}Your DNS can't be cleared")
+    Winput()
+       
+def tempfilesW():
+    asciiprint()
+    print(f"{c} {Style.BRIGHT}{Fore.CYAN}Searching for temporary files to delete...")
+    temp_dir = tempfile.gettempdir()
+    try:
+        for filename in os.listdir(temp_dir):
+            file_path = os.path.join(temp_dir, filename)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+                print(f"{p} {Style.BRIGHT}{Fore.CYAN}Temporary file {file_path} deleted")
+    except Exception as e:
+        print(f"{m} {Style.BRIGHT}{Fore.CYAN}An error occurred: {e}")
+    Winput()
+        
+def defragW():
+    asciiprint()
+    print(f"{c}{Style.BRIGHT}{Fore.CYAN}Starting defragmentation process...")
+    try:
+        subprocess.run(
+            ["powershell", "-Command", "Start-Process", "defrag", "-ArgumentList 'C:'", "-Verb", "RunAs"],
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True
+        )
+        print(f"{p} {Style.BRIGHT}{Fore.CYAN}Defragmentation process started successfully.")
+
+    except subprocess.CalledProcessError as e:
+        print(f"{m} {Style.BRIGHT}{Fore.CYAN}An error occurred during defragmentation.")
+        print(e.stderr)
+    except Exception as e:
+        print(f"{m} {Style.BRIGHT}{Fore.CYAN}An unexpected error occurred.")
+        print(e)
     Winput()
         
 def remove(path):
