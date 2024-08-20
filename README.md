@@ -10,15 +10,47 @@
 Created by Lunar, this tool is currently in its early development stage (version 0.1#Wip).
 
 # Features
-- Clear web browser histories for:
-  - Chrome
-  - Edge
-  - Firefox
-  - Opera
-  - Internet Explorer
-  - Brave
-- Empty the recycle bin
-- Flush DNS cache
+
+- **Clear Web Browser Histories**:
+  - **Chrome** - Remove browsing data including history, cookies, and cache.
+  - **Edge** - Clear browsing data and history.
+  - **Firefox** - Clean browsing history, cache, and cookies.
+  - **Opera** - Delete browsing history and cached data.
+  - **Internet Explorer** - Erase browsing history and temporary files.
+  - **Brave** - Remove browsing data including history, cookies, and cache.
+
+- **Empty the Recycle Bin**:
+  - Permanently delete files and folders from the recycle bin to free up disk space.
+
+- **Flush DNS Cache**:
+  - Clear the DNS cache to resolve issues related to domain name resolution and improve network connectivity.
+
+- **Clean Temporary Files**:
+  - Delete temporary files created by applications and the operating system to free up space and improve performance.
+
+- **Defragment the Hard Drive**:
+  - Optimize file storage on the hard drive by reorganizing fragmented data, which can enhance system performance.
+
+- **Get Disk Information**:
+  - Retrieve detailed information about each disk, such as total capacity, used space, free space, and health status.
+
+- **Get OS Information**:
+  - Obtain detailed information about the operating system, including version, build number, and other relevant details.
+
+- **Exit the Tool**:
+  - Close the application and exit the tool safely.
+
+- **Get Technical Support**:
+  - Access technical support via Discord for help with issues or inquiries.
+
+- **Display System or Application Info**:
+  - Show information about the system configuration or application version.
+
+- **Access GitHub Repository**:
+  - Visit the GitHub repository to explore the source code and documentation of the tool.
+
+- **Access Personal GitHub Profile**:
+  - View other projects and contributions on the personal GitHub profile.
 
 # Requirements
 Before running the script, you need to install the required Python packages. Use the following command:
