@@ -56,6 +56,6 @@ Before running the script, you need to install the required Python packages. Use
 
 # Contact
 - **GitHub:** [Luunarr/WipeUUr](https://github.com/Luunarr/WipeUUr)
-- **Discord:** [discord.gg/zACVRwCSve](https://discord.gg/zACVRwCSve))
+- **Discord:** [discord.gg/zACVRwCSve](https://discord.gg/zACVRwCSve)
 
 Feel free to reach out if you have any questions or feedback!
