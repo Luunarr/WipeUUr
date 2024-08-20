@@ -23,7 +23,7 @@ Created by Lunar, this tool is currently in its early development stage (version
 # Requirements
 Before running the script, you need to install the required Python packages. Use the following command:
 
-    pip install colorama winshell
+    pip install colorama winshell pywin32
 
 # How to Use
 1. Clone the repository:
