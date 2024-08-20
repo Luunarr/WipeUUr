@@ -97,12 +97,12 @@ def WipeUUr():
             
 def Winfo():
     asciiprint()
-    Info = """
+    Info = f"""{Style.BRIGHT}{Fore.CYAN}
                     WipeUUr
                     By Lunar
                   Version: 0.1#Wip
 
-   Description:
+   {Fore.RED}Description:{Fore.CYAN}
    WipeUUr is a command-line utility designed to clean up
    your system by clearing browser histories, emptying
    the recycle bin, and flushing the DNS cache. This tool
@@ -110,17 +110,17 @@ def Winfo():
    a simple yet effective way to maintain your system's
    cleanliness.
 
-   Copyright (c) 2024 Lunar
+   {Fore.RED}Copyright (c) 2024 Lunar{Fore.CYAN}
 
-   License:
+   {Fore.RED}License:{Fore.CYAN}
    This project is licensed under the Apache License 2.0 - see
    the LICENSE file for details.
 
-   Contact:
+   {Fore.RED}Contact:{Fore.CYAN}
    For any questions or feedback, please reach out to:
-   GitHub: https://github.com/Luunarr/WipeUUr
-   Discord: https://discord.gg/zACVRwCSve"""
-    print()
+   GitHub: {Fore.RED}https://github.com/Luunarr/WipeUUr
+   Discord: {Fore.RED}https://discord.gg/zACVRwCSve {Style.RESET_ALL}    """
+    print(Info)
     Winput()
       
 def helpW():
