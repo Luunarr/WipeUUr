@@ -1,5 +1,5 @@
 
-#                 WipeUUr
+#             WipeUUr
 
 
 **WipeUUr** is a command-line utility designed to clean up your system by:
