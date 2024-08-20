@@ -52,6 +52,10 @@ Before running the script, you need to install the required Python packages. Use
 - clearhist - Clean browser histories
 - clearbin  - Clean recycle bin
 - flushdns  - Flush DNS cache
+- tempfiles - Clean temporary files
+- defrag    - Defragment the hard drive
+- Idisk     - Get disk information
+- Ios       - Get OS information
 - exit      - Exit the tool
 - support   - Get technical support on Discord
 - info      - Display system or application info
