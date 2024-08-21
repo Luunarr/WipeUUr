@@ -88,21 +88,21 @@ def WipeUUr():
         Wi = input(prompt)
         if Wi in ["h", "H", "help", "Help"]:
             helpW()
-        elif Wi == "exit":
+        elif Wi in ["exit", "Exit", "quit", "Quit", "close", "Close", "end", "End"]:
             exit()
         elif Wi == "clear":
             clearW()
-        elif Wi == "github":
+        elif Wi in ["git", "github"]:
             asciiprint()
             webbrowser.open("https://github.com/Luunarr/WipeUUr")  
             print(f"{l} {Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr/WipeUUr {Style.RESET_ALL}")
             Winput()
-        elif Wi == "mygithub":
+        elif Wi in ["mygit", "mygithub"]:
             asciiprint()
             webbrowser.open("https://github.com/Luunarr")    
             print(f"{l} {Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr {Style.RESET_ALL}")
             Winput()
-        elif Wi == "info":
+        elif Wi in ["info", "Info", "toolInfo", "ToolInfo", "toolinfo"]:
             infoW()
         elif Wi == "support":
             asciiprint()
