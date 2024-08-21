@@ -1,63 +1,80 @@
-
 # WipeUUr
 
+**WipeUUr** is a command-line utility designed to streamline your system's maintenance by offering the following features:
 
-**WipeUUr** is a command-line utility designed to clean up your system by:
-- Clearing browser histories
-- Emptying the recycle bin
-- Flushing the DNS cache
+- **Clear Browser Histories**: Efficiently clean browsing data across various browsers.
+- **Empty the Recycle Bin**: Permanently remove files to free up disk space.
+- **Flush the DNS Cache**: Resolve domain resolution issues and enhance network connectivity.
+- **Clean Temporary Files**: Remove temporary files to improve system performance.
+- **Defragment the Hard Drive**: Optimize file storage to boost system efficiency.
+- **Retrieve Disk Information**: Get detailed disk usage and health status.
+- **Get OS Information**: Obtain comprehensive details about your operating system.
+- **Fetch PC Information**: Retrieve detailed information about your PC's hardware and configuration.
+- **Get All Information**: Display a comprehensive overview of disk, OS, and PC information.
+- **Access Technical Support**: Reach out via Discord for help and inquiries.
+- **Display System or Application Info**: Show detailed information about the system or application.
+- **Explore GitHub Repository**: Access source code and documentation.
+- **Visit Personal GitHub Profile**: Discover additional projects and contributions.
 
-Created by Lunar, this tool is currently in its early development stage (version 0.1#Wip).
+Created by Lunar, WipeUUr is currently in its early development stage (version 0.1#Wip).
 
-# Features
+## Features
 
 - **Clear Web Browser Histories**:
-  - **Chrome** - Remove browsing data including history, cookies, and cache.
-  - **Edge** - Clear browsing data and history.
-  - **Firefox** - Clean browsing history, cache, and cookies.
-  - **Opera** - Delete browsing history and cached data.
-  - **Internet Explorer** - Erase browsing history and temporary files.
-  - **Brave** - Remove browsing data including history, cookies, and cache.
+  - **Chrome**: Remove browsing data including history, cookies, and cache.
+  - **Edge**: Clear browsing data and history.
+  - **Firefox**: Clean browsing history, cache, and cookies.
+  - **Opera**: Delete browsing history and cached data.
+  - **Internet Explorer**: Erase browsing history and temporary files.
+  - **Brave**: Remove browsing data including history, cookies, and cache.
 
 - **Empty the Recycle Bin**:
-  - Permanently delete files and folders from the recycle bin to free up disk space.
+  - Permanently delete files and folders to reclaim disk space.
 
 - **Flush DNS Cache**:
-  - Clear the DNS cache to resolve issues related to domain name resolution and improve network connectivity.
+  - Clear the DNS cache to improve network performance and resolve connectivity issues.
 
 - **Clean Temporary Files**:
-  - Delete temporary files created by applications and the operating system to free up space and improve performance.
+  - Delete temporary files created by applications and the operating system to optimize performance.
 
 - **Defragment the Hard Drive**:
-  - Optimize file storage on the hard drive by reorganizing fragmented data, which can enhance system performance.
+  - Reorganize fragmented data to enhance file access speeds and overall system performance.
 
 - **Get Disk Information**:
-  - Retrieve detailed information about each disk, such as total capacity, used space, free space, and health status.
+  - Retrieve detailed insights about disk capacity, usage, free space, and health.
 
 - **Get OS Information**:
-  - Obtain detailed information about the operating system, including version, build number, and other relevant details.
+  - Obtain relevant details about your operating system, including version and build number.
+
+- **Fetch PC Information**:
+  - Retrieve information about your PC’s hardware configuration and specifications.
+
+- **Get All Information**:
+  - Display a comprehensive overview of disk, OS, and PC information.
 
 - **Exit the Tool**:
-  - Close the application and exit the tool safely.
+  - Safely close the application.
 
 - **Get Technical Support**:
-  - Access technical support via Discord for help with issues or inquiries.
+  - Connect with support via Discord for assistance with issues or questions.
 
 - **Display System or Application Info**:
-  - Show information about the system configuration or application version.
+  - Show detailed information about your system configuration or application version.
 
 - **Access GitHub Repository**:
-  - Visit the GitHub repository to explore the source code and documentation of the tool.
+  - Visit the repository to view the source code and documentation.
 
 - **Access Personal GitHub Profile**:
-  - View other projects and contributions on the personal GitHub profile.
+  - Explore other projects and contributions on the personal GitHub profile.
 
-# Requirements
-Before running the script, you need to install the required Python packages. Use the following command:
+## Requirements
+
+Before running the script, install the required Python packages using:
 
     pip install colorama winshell pywin32
 
-# How to Use
+## How to Use
+
 1. Clone the repository:
 
     ```bash
@@ -78,23 +95,26 @@ Before running the script, you need to install the required Python packages. Use
 
 4. Follow the on-screen prompts to use the tool.
 
-# Commands
+## Commands
+
 - `help`      - Display the command menu
-- `clear`     - Start cleaning
+- `clear`     - Start the cleaning process
 - `clearhist` - Clean browser histories
-- `clearbin`  - Clean recycle bin
-- `flushdns`  - Flush DNS cache
+- `clearbin`  - Empty the recycle bin
+- `flushdns`  - Flush the DNS cache
 - `tempfiles` - Clean temporary files
 - `defrag`    - Defragment the hard drive
-- `Idisk`     - Get disk information
-- `Ios`       - Get OS information
+- `Idisk`     - Retrieve disk information
+- `Ios`       - Obtain OS information
+- `fetch`     - Retrieve PC information
+- `fullf`     - Display a comprehensive overview of disk, OS, and PC information
 - `exit`      - Exit the tool
-- `support`   - Get technical support on Discord
-- `info`      - Display system or application info
-- `github`    - Access the GitHub repository for this tool
-- `mygithub`  - Access my personal GitHub profile
+- `support`   - Access technical support on Discord
+- `info`      - Display system or application information
+- `github`    - Visit the GitHub repository for this tool
+- `mygithub`  - View the personal GitHub profile
 
-# Contact
+## Contact
+
 - **GitHub:** [Luunarr/WipeUUr](https://github.com/Luunarr/WipeUUr)
-- **Discord:** [discord.gg/zACVRwCSve](https://discord.gg/zACVRwCSve)
-
+- **Discord:** [Join Support Channel](https://discord.gg/zACVRwCSve)
