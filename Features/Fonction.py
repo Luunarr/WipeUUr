@@ -4,14 +4,24 @@ from .Utils import *
 
 # ——————————————————————————————————————————————————— Config JSON ———————————————————————————————————————————————————
 
-with open(os.path.join(os.path.dirname(__file__), "Config.json"), "r") as f:
-    data = json.load(f)
-    try:
-        Browsers = data["Browsers"].split("-") if isinstance(data["Browsers"], str) else data["Browsers"]
-    except KeyError:
-        Browsers = []
-    except json.JSONDecodeError:
-        Browsers = []
+try:
+    with open(os.path.join(os.path.dirname(__file__), "Config.json"), "r") as f:
+        data = json.load(f)
+        try:
+            Browsers = data["Browsers"].split("-") if isinstance(data["Browsers"], str) else data["Browsers"]
+        except KeyError:
+            Browsers = []
+        except json.JSONDecodeError:
+            Browsers = []
+except:
+    with open("Config.json", "r") as f:
+        data = json.load(f)
+        try:
+            Browsers = data["Browsers"].split("-") if isinstance(data["Browsers"], str) else data["Browsers"]
+        except KeyError:
+            Browsers = []
+        except json.JSONDecodeError:
+            Browsers = []
         
 # ——————————————————————————————————————————————————— Clear Fonction ————————————————————————————————————————————————
 
