@@ -169,7 +169,8 @@ def SysInfo():
             input()
             os.system("cls")
 
-        elif Wi in ["5","Network","network", "nk"]:
+        elif Wi in ["5","Network","network", "nk", "MyNtw", "MyNt", "MyNetwork", "myntw"]:
+            myNtw()
             input()
             os.system("cls")
   
@@ -306,7 +307,8 @@ def SysInfo22():
             input()
             os.system("cls")
 
-        elif Wi in ["5","Network","network", "nk"]:
+        elif Wi in ["5","Network","network", "nk", "MyNtw", "MyNt", "MyNetwork", "myntw"]:
+            myNtw()
             input()
             os.system("cls")
  
