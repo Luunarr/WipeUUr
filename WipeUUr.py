@@ -192,6 +192,11 @@ def helpW():
     Winput() 
 
 def clearW():
+    asciiprint()
+    clearbinW()
+    clearhistW()
+    flushdnsW()
+    tempfilesW()
     Winput()
 
 def clearhistW():
