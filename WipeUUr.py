@@ -102,6 +102,8 @@ def Cleaning():
 
         if Wi in ["1", "Clearhist", "clearhist", "ch", "CH"]:
             clearhistW()
+            input()
+            os.system("cls")
 
         elif Wi in ["cls", "clr"]:
             os.system("cls")
@@ -109,18 +111,28 @@ def Cleaning():
 
         elif Wi in ["2","clear","Clear"]:
             clearbinW()    
-    
+            input()
+            os.system("cls")
+
         elif Wi in ["3","clearbin","Clearbin","cb"]:
             clearbinW()
+            input()
+            os.system("cls")
 
         elif Wi in ["4","Tempfiles","tempfiles","tf"]:
             clearbinW()
+            input()
+            os.system("cls")
 
         elif Wi in ["5","Flushdns","flushdns","fd"]:
             clearbinW()
+            input()
+            os.system("cls")
 
         elif Wi in ["6","Defrag","defrag","df"]:
             clearbinW()
+            input()
+            os.system("cls")
 
         elif Wi == "exit":
             break
@@ -139,18 +151,28 @@ def SysInfo():
 
         elif Wi in ["1","fetch","Fetch", "ft"]: 
             fetchW()    
+            input()
+            os.system("cls")
 
         elif Wi in ["2","fullf","Fullf", "FullFetch", "ff"]:
             fullfW()   
+            input()
+            os.system("cls")
 
         elif Wi in ["3","MyOs","myos", "mo", "MO"]:
             iosW()   
+            input()
+            os.system("cls")
 
         elif Wi in ["4","MyDisk","mydisk", "md"]:
             idiskW()   
+            input()
+            os.system("cls")
 
         elif Wi in ["5","Network","network", "nk"]:
-            input()   
+            input()
+            os.system("cls")
+  
 
         elif Wi == "exit":
             break
@@ -168,6 +190,8 @@ def Extras():
 
         elif Wi in ["1","info","Info", "inf"]: 
             infoW()    
+            input()
+            os.system("cls")
 
         elif Wi in ["2","Github","github", "gh"]:
             space()
@@ -175,7 +199,10 @@ def Extras():
             webbrowser.open("https://github.com/Luunarr/WipeUUr")  
             print(f"{l} {bright}{cyan}https://github.com/Luunarr/WipeUUr {reset}")
 
-            space() 
+            space()
+            input()
+            os.system("cls")
+
 
         elif Wi in ["3","Support","support", "supp", "sp"]:
 
@@ -184,7 +211,9 @@ def Extras():
             webbrowser.open("https://discord.gg/zACVRwCSve")  
             print(f"{l} {bright}{cyan}https://discord.gg/zACVRwCSve {reset}")
 
-            space() 
+            space()
+            input()
+            os.system("cls")
 
         elif Wi in ["4","MyGithub","MYGITHUB", "mygithub", "mgh"]:
             space()
@@ -193,6 +222,9 @@ def Extras():
             print(f"{l} {bright}{cyan}https://github.com/Luunarr {reset}")
 
             space()
+            input()
+            os.system("cls")
+
 
         elif Wi == "exit":
             break
@@ -207,6 +239,8 @@ def Cleaning22():
 
         if Wi in ["1", "Clearhist", "clearhist", "ch", "CH"]:
             clearhistW()
+            input()
+            os.system("cls")
 
         elif Wi in ["cls", "clr"]:
             os.system("cls")
@@ -214,18 +248,28 @@ def Cleaning22():
 
         elif Wi in ["2","clear","Clear"]:
             clearbinW()    
-    
+            input()
+            os.system("cls")
+
         elif Wi in ["3","clearbin","Clearbin","cb"]:
             clearbinW()
+            input()
+            os.system("cls")
 
         elif Wi in ["4","Tempfiles","tempfiles","tf"]:
             clearbinW()
+            input()
+            os.system("cls")
 
         elif Wi in ["5","Flushdns","flushdns","fd"]:
             clearbinW()
+            input()
+            os.system("cls")
 
         elif Wi in ["6","Defrag","defrag","df"]:
             clearbinW()
+            input()
+            os.system("cls")
 
         elif Wi == "exit":
             break
@@ -244,18 +288,28 @@ def SysInfo22():
 
         elif Wi in ["1","fetch","Fetch", "ft"]: 
             fetchW()    
+            input()
+            os.system("cls")
 
         elif Wi in ["2","fullf","Fullf", "FullFetch", "ff"]:
             fullfW()   
+            input()
+            os.system("cls")
 
         elif Wi in ["3","MyOs","myos", "mo", "MO"]:
             iosW()   
+            input()
+            os.system("cls")
 
         elif Wi in ["4","MyDisk","mydisk", "md"]:
             idiskW()   
+            input()
+            os.system("cls")
 
         elif Wi in ["5","Network","network", "nk"]:
-            input()   
+            input()
+            os.system("cls")
+ 
 
         elif Wi == "exit":
             break
@@ -280,7 +334,8 @@ def Extras22():
             webbrowser.open("https://github.com/Luunarr/WipeUUr")  
             print(f"{l} {bright}{cyan}https://github.com/Luunarr/WipeUUr {reset}")
 
-            space() 
+            space()
+            os.system("cls")
 
         elif Wi in ["3","Support","support", "supp", "sp"]:
 
@@ -289,7 +344,8 @@ def Extras22():
             webbrowser.open("https://discord.gg/zACVRwCSve")  
             print(f"{l} {bright}{cyan}https://discord.gg/zACVRwCSve {reset}")
 
-            space() 
+            space()
+            os.system("cls")
 
         elif Wi in ["4","MyGithub","MYGITHUB", "mygithub", "mgh"]:
             space()
@@ -298,6 +354,9 @@ def Extras22():
             print(f"{l} {bright}{cyan}https://github.com/Luunarr {reset}")
 
             space()
+            input()
+            os.system("cls")
+
 
         elif Wi == "exit":
             break
