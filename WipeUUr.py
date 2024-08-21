@@ -254,6 +254,7 @@ def idiskW():
     asciiprint()
     memory = psutil.virtual_memory()
     disk = psutil.disk_usage('/')
+    print(f"{h} {Style.BRIGHT}{Fore.CYAN}Disk information :")
     print(f"{p} {Style.BRIGHT}{Fore.CYAN}Total Memory: {Fore.RED}{memory.total / (1024 ** 3):.2f} GB")
     print(f"{p} {Style.BRIGHT}{Fore.CYAN}Available Memory: {Fore.RED}{memory.available / (1024 ** 3):.2f} GB")
     print(f"{p} {Style.BRIGHT}{Fore.CYAN}Memory Usage: {Fore.RED}{memory.percent}%")
@@ -265,8 +266,8 @@ def idiskW():
 
 def iosW():
     asciiprint()
-    print(f"{h} {Style.BRIGHT}{Fore.CYAN}System Information")
     ios = platform.uname()
+    print(f"{h} {Style.BRIGHT}{Fore.CYAN}OS information :")
     print(f"{p} {Style.BRIGHT}{Fore.CYAN}System: {Fore.RED}{ios.system}")
     print(f"{p} {Style.BRIGHT}{Fore.CYAN}Node Name: {Fore.RED}{ios.node}")
     print(f"{p} {Style.BRIGHT}{Fore.CYAN}Release: {Fore.RED}{ios.release}")
@@ -280,6 +281,7 @@ def fetchW():
     cpuWcount = psutil.cpu_count(logical=False)
     cpuWlogical = psutil.cpu_count(logical=True)
     cpuWfreq = psutil.cpu_freq()
+    print(f"{h} {Style.BRIGHT}{Fore.CYAN}PC informationn :")
     print(f"{p} {Style.BRIGHT}{Fore.CYAN}System: {Fore.RED}{ios.system}")
     print(f"{p} {Style.BRIGHT}{Fore.CYAN}Node Name: {Fore.RED}{ios.node}")
     print(f"{p} {Style.BRIGHT}{Fore.CYAN}Release: {Fore.RED}{ios.release}")
