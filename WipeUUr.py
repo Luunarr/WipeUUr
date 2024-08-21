@@ -4,12 +4,14 @@
 #                Version: 0.2#Wip
 #
 #   Description:
-#   WipeUUr is a command-line utility designed to clean up
-#   your system by clearing browser histories, emptying
-#   the recycle bin, and flushing the DNS cache. This tool
-#   is in its early development phase and aims to provide
-#   a simple yet effective way to maintain your system's
-#   cleanliness.
+#   WipeUUr is a command-line utility designed to help users maintain their system's 
+#   cleanliness. Although still in its early development phase, it offers a variety 
+#   of functions to keep your system running smoothly. WipeUUr allows you to clear browser 
+#   histories, empty the recycle bin, flush the DNS cache, clean temporary files, and 
+#   defragment your hard drive. Additionally, it provides commands to retrieve disk and 
+#   operating system information. For users seeking technical support or more information
+#   about the tool, WipeUUr also offers options to connect to a Discord support channel, 
+#   access the GitHub repository, or view the developer's GitHub profile.
 #
 #   Copyright (c) 2024 Lunar
 #
@@ -28,6 +30,10 @@ import os
 import subprocess
 import winshell
 import webbrowser
+import psutil
+import platform
+
+from datetime import datetime
 from colorama import *
 
 init(autoreset=True)
@@ -37,6 +43,7 @@ m = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.RED}-{Fore.WHITE}]{Style
 c = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.YELLOW}/{Fore.WHITE}]{Style.RESET_ALL}"
 i = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.MAGENTA}>{Fore.WHITE}]{Style.RESET_ALL}"
 e = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.CYAN}~{Fore.WHITE}]{Style.RESET_ALL}"
+l = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.CYAN}Link{Fore.WHITE}]{Style.RESET_ALL}"
 h = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.BLUE}?{Fore.WHITE}]{Style.RESET_ALL}"
 
 tagV = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.BLUE}0.2#Wip{Fore.WHITE}]{Style.RESET_ALL}"
@@ -49,8 +56,8 @@ asciiW = f"""{Style.BRIGHT}{Fore.CYAN}     _ _ _ _         {Fore.RED}_____ _____
     {Fore.CYAN}| | | | | . | -_{Fore.RED}|  |  |  |  |{Fore.CYAN}  _|   {Style.BRIGHT}{tagA}{Style.BRIGHT}
     {Fore.CYAN}|_____|_|  _|___{Fore.RED}|_____|_____|{Fore.CYAN}_|  
     {Fore.CYAN}        |_|  
-                        
-{h} {Style.BRIGHT}{Fore.CYAN}Type '{Fore.RED}help{Fore.CYAN}' for help{Style.RESET_ALL}"""
+
+{h} {Style.BRIGHT}{Fore.CYAN}Type '{Fore.RED}help{Fore.CYAN}' for assistance{Style.RESET_ALL}"""
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -77,17 +84,17 @@ def WipeUUr():
             clearW()
         elif Wi == "github":
             webbrowser.open("https://github.com/Luunarr/WipeUUr")  
-            print(f"{Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr/WipeUUr {Style.RESET_ALL}")
+            print(f"{l} {Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr/WipeUUr {Style.RESET_ALL}")
             Winput()
         elif Wi == "mygithub":
             webbrowser.open("https://github.com/Luunarr")    
-            print(f"{Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr {Style.RESET_ALL}")
+            print(f"{l} {Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr {Style.RESET_ALL}")
             Winput()
         elif Wi == "info":
-            Winfo()
+            infoW()
         elif Wi == "support":
             webbrowser.open("https://discord.gg/zACVRwCSve")  
-            print(f"{Style.BRIGHT}{Fore.CYAN}https://discord.gg/zACVRwCSve {Style.RESET_ALL}")
+            print(f"{l} {Style.BRIGHT}{Fore.CYAN}https://discord.gg/zACVRwCSve {Style.RESET_ALL}")
             Winput()
         elif Wi == "clearhist":
             clearhistW()
@@ -99,8 +106,13 @@ def WipeUUr():
             tempfilesW()  
         elif Wi == "defrag":
             defragW()  
-                                    
-def Winfo():
+        elif Wi == "idisk":
+            idiskW() 
+        elif Wi == "ios":
+            iosW()  
+        elif Wi == "fetch":
+            fetchW() 
+def infoW():
     asciiprint()
     Info = f"""{Style.BRIGHT}{Fore.CYAN}
                     WipeUUr
@@ -108,12 +120,14 @@ def Winfo():
                 Version: {Fore.RED}0.2#Wip
 
    {Fore.RED}Description:{Fore.CYAN}
-   WipeUUr is a command-line utility designed to clean up
-   your system by clearing browser histories, emptying
-   the recycle bin, and flushing the DNS cache. This tool
-   is in its early development phase and aims to provide
-   a simple yet effective way to maintain your system's
-   cleanliness.
+   WipeUUr is a command-line utility designed to help users maintain their system's 
+   cleanliness. Although still in its early development phase, it offers a variety 
+   of functions to keep your system running smoothly. WipeUUr allows you to clear browser 
+   histories, empty the recycle bin, flush the DNS cache, clean temporary files, and 
+   defragment your hard drive. Additionally, it provides commands to retrieve disk and 
+   operating system information. For users seeking technical support or more information
+   about the tool, WipeUUr also offers options to connect to a Discord support channel, 
+   access the GitHub repository, or view the developer's GitHub profile.
 
    {Fore.RED}Copyright (c) 2024 Lunar{Fore.CYAN}
 
@@ -127,7 +141,7 @@ def Winfo():
    Discord: {Fore.RED}https://discord.gg/zACVRwCSve {Style.RESET_ALL}    """
     print(Info)
     Winput()
-      
+
 def helpW():
     asciiprint()
     Help = f"""{h} {Style.BRIGHT}{Fore.CYAN}Commands       Utilities
@@ -141,8 +155,9 @@ def helpW():
   tempfiles  {Fore.RED}|{Fore.CYAN}  Clean temporary files
   defrag     {Fore.RED}|{Fore.CYAN}  Defragment the hard drive
   {Fore.RED}_________________________________{Fore.CYAN}
-  Idisk      {Fore.RED}|{Fore.CYAN}  Get disk information
-  Ios        {Fore.RED}|{Fore.CYAN}  Get OS information
+  idisk      {Fore.RED}|{Fore.CYAN}  Get disk information
+  ios        {Fore.RED}|{Fore.CYAN}  Get OS information
+  fetch      {Fore.RED}|{Fore.CYAN}  Get PC information
   {Fore.RED}_________________________________{Fore.CYAN}
   exit       {Fore.RED}|{Fore.CYAN}  Exit WipeUUr
   support    {Fore.RED}|{Fore.CYAN}  Get technical support on Discord
@@ -151,10 +166,10 @@ def helpW():
   mygithub   {Fore.RED}|{Fore.CYAN}  Access my personal GitHub profile"""
     print(Help)
     Winput() 
-    
+
 def clearW():
     Winput()
-    
+
 def clearhistW():
     asciiprint()
     try:
@@ -202,7 +217,7 @@ def flushdnsW():
     except:
         print(f"{m} {Style.BRIGHT}{Fore.CYAN}Your DNS can't be cleared")
     Winput()
-       
+
 def tempfilesW():
     asciiprint()
     print(f"{c} {Style.BRIGHT}{Fore.CYAN}Searching for temporary files to delete...")
@@ -216,7 +231,7 @@ def tempfilesW():
     except Exception as e:
         print(f"{m} {Style.BRIGHT}{Fore.CYAN}An error occurred: {e}")
     Winput()
-        
+
 def defragW():
     asciiprint()
     print(f"{c}{Style.BRIGHT}{Fore.CYAN}Starting defragmentation process...")
@@ -229,12 +244,53 @@ def defragW():
 
     except subprocess.CalledProcessError as e:
         print(f"{m} {Style.BRIGHT}{Fore.CYAN}An error occurred during defragmentation.")
-        print(e.stderr)
+        print(f"{m} {Style.BRIGHT}{Fore.RED}{e.stderr}")
     except Exception as e:
         print(f"{m} {Style.BRIGHT}{Fore.CYAN}An unexpected error occurred.")
-        print(e)
+        print(f"{m} {Style.BRIGHT}{Fore.RED}{e}")
     Winput()
-        
+
+def idiskW():
+    asciiprint()
+    memory = psutil.virtual_memory()
+    disk = psutil.disk_usage('/')
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Total Memory: {Fore.RED}{memory.total / (1024 ** 3):.2f} GB")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Available Memory: {Fore.RED}{memory.available / (1024 ** 3):.2f} GB")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Memory Usage: {Fore.RED}{memory.percent}%")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Total Disk Space: {Fore.RED}{disk.total / (1024 ** 3):.2f} GB")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Used Disk Space: {Fore.RED}{disk.used / (1024 ** 3):.2f} GB")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Free Disk Space: {Fore.RED}{disk.free / (1024 ** 3):.2f} GB")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Disk Usage: {Fore.RED}{disk.percent}%")
+    Winput()
+
+def iosW():
+    asciiprint()
+    print(f"{h} {Style.BRIGHT}{Fore.CYAN}System Information")
+    ios = platform.uname()
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}System: {Fore.RED}{ios.system}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Node Name: {Fore.RED}{ios.node}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Release: {Fore.RED}{ios.release}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Version: {Fore.RED}{ios.version}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Machine: {Fore.RED}{ios.machine}")
+    Winput()
+
+def fetchW():
+    asciiprint()
+    ios = platform.uname()
+    cpuWcount = psutil.cpu_count(logical=False)
+    cpuWlogical = psutil.cpu_count(logical=True)
+    cpuWfreq = psutil.cpu_freq()
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}System: {Fore.RED}{ios.system}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Node Name: {Fore.RED}{ios.node}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Release: {Fore.RED}{ios.release}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Version: {Fore.RED}{ios.version}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Machine: {Fore.RED}{ios.machine}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}Processor: {Fore.RED}{ios.processor}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}CPU Physical Cores: {Fore.RED}{cpuWcount}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}CPU Logical Cores: {Fore.RED}{cpuWlogical}")
+    print(f"{p} {Style.BRIGHT}{Fore.CYAN}CPU Frequency: {Fore.RED}{cpuWfreq.current:.2f} MHz")
+    Winput()
+
 def remove(path):
     try:
         if os.path.exists(path):
@@ -313,6 +369,6 @@ def clearhistWbrave():
         print(f"{p} {Style.BRIGHT}{Fore.CYAN}Brave history cleared")
     except:
         print(f"{m} {Style.BRIGHT}{Fore.CYAN}Failed to clear Brave history")
-           
+
 if __name__ == "__main__":
     WipeUUr()
