@@ -4,24 +4,14 @@ from .Utils import *
 
 # ——————————————————————————————————————————————————— Config JSON ———————————————————————————————————————————————————
 
-try:
-    with open(os.path.join(os.path.dirname(__file__), "Config.json"), "r") as f:
-        data = json.load(f)
-        try:
-            Browsers = data["Browsers"].split("-") if isinstance(data["Browsers"], str) else data["Browsers"]
-        except KeyError:
-            Browsers = []
-        except json.JSONDecodeError:
-            Browsers = []
-except:
-    with open("Config.json", "r") as f:
-        data = json.load(f)
-        try:
-            Browsers = data["Browsers"].split("-") if isinstance(data["Browsers"], str) else data["Browsers"]
-        except KeyError:
-            Browsers = []
-        except json.JSONDecodeError:
-            Browsers = []
+with open(os.path.join(os.path.dirname(__file__), "Config.json"), "r") as f:
+    data = json.load(f)
+    try:
+        Browsers = data["Browsers"].split("-") if isinstance(data["Browsers"], str) else data["Browsers"]
+    except KeyError:
+        Browsers = []
+    except json.JSONDecodeError:
+        Browsers = []
         
 # ——————————————————————————————————————————————————— Clear Fonction ————————————————————————————————————————————————
 
@@ -114,30 +104,31 @@ def helpW():
     space()
 
     Help = f"""                                        ╔═════════════╗
-                                        ║ Cleaning    ║
-                                        ╚══╦══════════╝                                
-                                           ╠  clear      │  Start cleaning
-                                           ╠  clearhist  │  Clean web history
-                                           ╠  clearbin   │  Empty the recycle bin
-                                           ╠  flushdns   │  Clear DNS cache
-                           ║               ╠  tempfiles  │  Delete temporary files
-                         ╔═╩═══════════╗   ╠  defrag     │  Defragment the hard drive
-                         ║             ║   ║
-                         ╚════════╦════╝   ║   ╔══════════════╗                ╔═════════════╗
+                                        ║ Cleaning    ╠════════════════════════════════╗
+                                        ╚══╦══════════╝                                ║
+                                           ╠  clear      │  Start cleaning             ║
+                                           ╠  clearhist  │  Clean web history          ║
+                                           ╠  clearbin   │  Empty the recycle bin      ║
+                                           ╠  flushdns   │  Clear DNS cache            ║
+                           ║               ╠  tempfiles  │  Delete temporary files     ║
+                         ╔═╩═══════════╗   ╠  defrag     │  Defragment the hard drive  ║
+                         ║             ║   ║                                           ║
+                         ╚════════╦════╝   ║   ╔══════════════╗                ╔═══════╩═════╗
                                   ╚════════╬═══╣   WipeUUr    ╠═════════════╦══╣ Sys Info    ╠════════════════╗
                                            ║   ╚╦══════╦══════╝             ║  ╚═════════════╝                ║
-                          ╔════════════════╝    ║      ║                    ╠        │                        ║
-               ╔══════════╩══╗                  ║      ║                    ╠ idisk  │  Get disk information  ║
-               ║ soon        ║  ╔═════════════╗ ║      ║                    ╠ ios    │  Get OS information    ║
-               ╚═════════════╝  ║ Basic       ╠═╝      ║  ╔═════════════╗   ╠ fetch  │  Get PC information    ║
-                                ╚═════╦═══════╝        ╚══╣ Extras      ║   ╠ fullf  │  Get all information   ║
-                                      ║                   ╚═════════╦═══╩═══╩═════════════════════════════════╩═════════════════╗    
-                                      ║                             ╠                                                           ║ 
-               exit  │  Exit WipeUUr  ╣                             ╠            │                                              ║
-                                      ╣                             ╠  support   │  Get technical support on Discord            ║
-                                      ╣                             ╠  info      │  Display system or application info          ║
-                                      ╝                             ╠  github    │  Access the GitHub repository for this tool  ║
+                          ╔════════════════╝    ║      ║                    ╠ myntw  │  Get Ntw information   ║
+               ╔══════════╩══╗                  ║      ╠  {cyan}By {mention}{red}Lunar         ╠ idisk  │  Get disk information  ║
+        ╔══════╣ soon        ╠══╦═════════════╗ ║      ║                    ╠ ios    │  Get OS information    ║
+        ║      ╚═════════════╝  ║ Basic       ╠═╝      ║  ╔═════════════╗   ╠ fetch  │  Get PC information    ║
+        ║                       ╚═════╦═══════╝        ╚══╣ Extras      ║   ╠ fullf  │  Get all information   ║
+        ║                             ║                   ╚═════════╦═══╩═══╩═════════════════════════════════╩═════════════════╗    
+        ║                             ╣                             ║                                                           ║ 
+        ║      exit  │  Exit WipeUUr  ╣                             ╠            │                                              ║
+        ║                             ╣                             ╠  support   │  Get technical support on Discord            ║
+        ║                             ║                             ╠  info      │  Display system or application info          ║
+        ╚═════════════════════════════╝                             ╠  github    │  Access the GitHub repository for this tool  ║
                                                                     ╠  mygithub  │  Access my personal GitHub profile           ║
+                                                                    ║                                                           ║
                                                                     ╚═══════════════════════════════════════════════════════════╝"""
     help = Help.replace("═", f"{cyan}═{reset}").replace("╩", f"{cyan}╩{reset}").replace("╦", f"{cyan}╦{reset}").replace("║", f"{cyan}║{reset}").replace("╣", f"{cyan}╣{reset}").replace("╗", f"{red}╗{reset}").replace("╝", f"{red}╝{reset}").replace("╚", f"{red}╚{reset}").replace("╔", f"{red}╔{reset}").replace("╬", f"{cyan}╬{reset}").replace("╠", f"{cyan}╠{reset}")
 
