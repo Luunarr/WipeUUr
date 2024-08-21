@@ -169,10 +169,9 @@ def SysInfo():
             input()
             os.system("cls")
 
-        elif Wi in ["5","Network","network", "nk"]:
+        elif Wi in ["5","Network","network", "nk", "myntw"]:
             input()
             os.system("cls")
-  
 
         elif Wi == "exit":
             break
