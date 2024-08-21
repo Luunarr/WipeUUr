@@ -18,7 +18,7 @@
 
 Created by Lunar, WipeUUr is currently in its early development stage (version 0.5#Wip).
 
-## 📜 Features
+## 🛠️ Features
 
 - **Clear Web Browser Histories**:
   - **Chrome**: Remove browsing data including history, cookies, and cache.
@@ -67,7 +67,7 @@ Created by Lunar, WipeUUr is currently in its early development stage (version 0
 - **Access Personal GitHub Profile**:
   - Explore other projects and contributions on the personal GitHub profile.
 
-## ❗ Requirements
+## 🚀 Requirements
 
 0. Before running the script, install the required Python packages using (Put **"False"** after installation, Path: **Features\Config.json**):
 
@@ -77,7 +77,7 @@ Created by Lunar, WipeUUr is currently in its early development stage (version 0
     }
     ```
     
-## ❓ How to Use
+## 🎯 How to Use
 
 1. Clone the repository:
 
