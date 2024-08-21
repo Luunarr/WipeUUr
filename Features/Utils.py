@@ -70,7 +70,7 @@ def menuAscii_2001():
 
 
 def cleaning_menuAscii_2001():
-    print("""
+    eyeyeye = """
 
                           ╔═════════════╗
                        ╔══╣ 1. Cleaning ║
@@ -86,4 +86,48 @@ def cleaning_menuAscii_2001():
                        ╚═══╝╚═════════════╝
           
 
-""").replace("═", f"{cyan}═{reset}").replace("╩", f"{red}╩{reset}").replace("╦", f"{red}╦{reset}").replace("║", f"{cyan}║{reset}").replace("╣", f"{red}╣{reset}").replace("╗", f"{red}╗{reset}").replace("╝", f"{red}╝{reset}").replace("╚", f"{red}╚{reset}").replace("╔", f"{red}╔{reset}").replace("╬", f"{red}╬{reset}").replace("╠", f"{red}╠{reset}")
+""".replace("═", f"{cyan}═{reset}").replace("╩", f"{red}╩{reset}").replace("╦", f"{red}╦{reset}").replace("║", f"{cyan}║{reset}").replace("╣", f"{red}╣{reset}").replace("╗", f"{red}╗{reset}").replace("╝", f"{red}╝{reset}").replace("╚", f"{red}╚{reset}").replace("╔", f"{red}╔{reset}").replace("╬", f"{red}╬{reset}").replace("╠", f"{red}╠{reset}")
+    print(eyeyeye)
+
+
+
+def sysinfo_menuAscii_2001():
+    eyeydsfsdfeye = """
+
+                          ╔═════════════╗
+                       ╔══╣ 1. SysInfo  ║
+                       ║  ╚╦════════════╝
+                       ║   ║╔═════════════╗
+                       ║   ╠╣ 1. Fetch    ╠══╗  ╔═════════════╗
+╔══════════════╗       ║   ║╚═════════════╝  ╠══╣ 4. MyDisk   ║
+║   WipeUUr    ╠═══════╣   ║╔═════════════╗  ║  ╚═════════════╝
+╚══════════════╝       ║   ╠╣ 2. Fullf    ╠══╣
+                       ║   ║╚═════════════╝  ║  ╔═════════════╗
+                       ║   ║╔═════════════╗  ╠══╣ 5. Network  ║
+                       ║   ╠╣ 3. MyOs     ╠══╝  ╚═════════════╝
+                       ╚═══╝╚═════════════╝
+          
+
+""".replace("═", f"{cyan}═{reset}").replace("╩", f"{red}╩{reset}").replace("╦", f"{red}╦{reset}").replace("║", f"{cyan}║{reset}").replace("╣", f"{red}╣{reset}").replace("╗", f"{red}╗{reset}").replace("╝", f"{red}╝{reset}").replace("╚", f"{red}╚{reset}").replace("╔", f"{red}╔{reset}").replace("╬", f"{red}╬{reset}").replace("╠", f"{red}╠{reset}")
+    print(eyeydsfsdfeye)
+
+
+def extras_menuAscii_2001():
+    sdfgssdgf = """
+
+                          ╔═════════════╗
+                       ╔══╣ 1. Extras   ║
+                       ║  ╚╦════════════╝
+                       ║   ║╔═════════════╗
+                       ║   ╠╣ 1. Info     ╠══╗
+╔══════════════╗       ║   ║╚═════════════╝  ║
+║   WipeUUr    ╠═══════╣   ║╔═════════════╗  ║  ╔═════════════╗
+╚══════════════╝       ║   ╠╣ 2. Github   ╠══╬══╣ 4. MyGithub ║
+                       ║   ║╚═════════════╝  ║  ╚═════════════╝
+                       ║   ║╔═════════════╗  ║
+                       ║   ╠╣ 3. Support  ╠══╝
+                       ╚═══╝╚═════════════╝
+          
+
+""".replace("═", f"{cyan}═{reset}").replace("╩", f"{red}╩{reset}").replace("╦", f"{red}╦{reset}").replace("║", f"{cyan}║{reset}").replace("╣", f"{red}╣{reset}").replace("╗", f"{red}╗{reset}").replace("╝", f"{red}╝{reset}").replace("╚", f"{red}╚{reset}").replace("╔", f"{red}╔{reset}").replace("╬", f"{red}╬{reset}").replace("╠", f"{red}╠{reset}")
+    print(sdfgssdgf)
