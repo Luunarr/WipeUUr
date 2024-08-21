@@ -1,7 +1,7 @@
 ##################################################
 #                    WipeUUr
 #                    By Lunar
-#                  Version: 0.2#Wip
+#                Version: 0.2#Wip
 #
 #   Description:
 #   WipeUUr is a command-line utility designed to clean up
@@ -24,7 +24,7 @@
 ##################################################
 
 import tempfile
-import os 
+import os
 import subprocess
 import winshell
 import webbrowser
@@ -105,7 +105,7 @@ def Winfo():
     Info = f"""{Style.BRIGHT}{Fore.CYAN}
                     WipeUUr
                     By Lunar
-                  Version: 0.2#Wip
+                Version: {Fore.RED}0.2#Wip
 
    {Fore.RED}Description:{Fore.CYAN}
    WipeUUr is a command-line utility designed to clean up
@@ -130,7 +130,7 @@ def Winfo():
       
 def helpW():
     asciiprint()
-    Help = f"""{h} {Style.BRIGHT}{Fore.CYAN}Commands     Utilities
+    Help = f"""{h} {Style.BRIGHT}{Fore.CYAN}Commands       Utilities
   {Fore.RED}_________________________________{Fore.CYAN}
   help       {Fore.RED}|{Fore.CYAN}  Display this menu
   {Fore.RED}_________________________________{Fore.CYAN}
