@@ -169,9 +169,10 @@ def SysInfo():
             input()
             os.system("cls")
 
-        elif Wi in ["5","Network","network", "nk", "myntw"]:
+        elif Wi in ["5","Network","network", "nk"]:
             input()
             os.system("cls")
+  
 
         elif Wi == "exit":
             break
@@ -464,6 +465,7 @@ def WipeUUr():
             while True:
                 os.system("cls")
                 MenuPrint(Menu)
+                Wi = input(prompt)
                 if Wi in ["1", "Cleaning", "cleaning", "clng", "clg"]:
                     Cleaning22()
 
