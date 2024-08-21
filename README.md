@@ -69,12 +69,13 @@ Created by Lunar, WipeUUr is currently in its early development stage (version 0
 
 ## Requirements
 
-Before running the script, install the required Python packages using (Put **"False"** after installation, Path: **Features\Config.json**)::
+Before running the script, install the required Python packages using (Put **"False"** after installation, Path: **Features\Config.json**):
     ```json
     {
      "Requirements": "True"
     }
     ```
+    
 ## How to Use
 
 1. Clone the repository:
