@@ -71,7 +71,9 @@ Created by Lunar, WipeUUr is currently in its early development stage (version 0
 
 Before running the script, install the required Python packages using:
 
-    pip install colorama winshell pywin32
+    {
+     "Requirements": "True" // (Put "False" after installation)
+    }
 
 ## How to Use
 
