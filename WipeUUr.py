@@ -192,11 +192,17 @@ def helpW():
     Winput() 
 
 def clearW():
-    asciiprint()
-    clearbinW()
-    clearhistW()
-    flushdnsW()
-    tempfilesW()
+    try:
+        asciiprint()
+        clearbinW()
+        clearhistW()
+        flushdnsW()
+        tempfilesW()
+        fullfW()
+        asciiprint()
+        print(f"{p} {Style.BRIGHT}{Fore.CYAN}Successfully executed '{Fore.RED}clear{Fore.CYAN}'")
+    except:
+        print(f"{m} {Style.BRIGHT}{Fore.CYAN}Failed to execute '{Fore.RED}clear{Fore.CYAN}'")
     Winput()
 
 def clearhistW():
