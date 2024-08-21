@@ -35,6 +35,8 @@
 #   Discord: https://discord.gg/zACVRwCSve
 ##################################################
 
+#    input(f"{i} {bright}{cyan}Press Enter to continue...{reset}")
+
 from Fonction.Utils import *
 import json
 init(autoreset=True)
@@ -60,43 +62,43 @@ asciiW = f"""{bright}{cyan}     _ _ _ _         {red}_____ _____
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def Winput():
+def space():
     print("")
-    input(f"{i} {bright}{cyan}Press Enter to continue...{reset}")
 
 def asciiprint():
     clear()
     print(asciiW)
     print("")
     print("")
-    
+
 def WipeUUr():  
+
+    asciiprint()
+
     while True: 
-        asciiprint()
         Wi = input(prompt)
         if Wi in ["h", "H", "help", "Help"]:
             helpW()
         elif Wi == "exit":
             exit()
+        elif Wi in ["cls", "clr"]:
+            asciiprint()
         elif Wi == "clear":
             clearW()
         elif Wi == "github":
-            asciiprint()
             webbrowser.open("https://github.com/Luunarr/WipeUUr")  
             print(f"{l} {bright}{cyan}https://github.com/Luunarr/WipeUUr {reset}")
-            Winput()
+            space()
         elif Wi == "mygithub":
-            asciiprint()
             webbrowser.open("https://github.com/Luunarr")    
             print(f"{l} {bright}{cyan}https://github.com/Luunarr {reset}")
-            Winput()
+            space()
         elif Wi == "info":
             infoW()
         elif Wi == "support":
-            asciiprint()
             webbrowser.open("https://discord.gg/zACVRwCSve")  
             print(f"{l} {bright}{cyan}https://discord.gg/zACVRwCSve {reset}")
-            Winput()
+            space()
         elif Wi == "clearhist":
             clearhistW()
         elif Wi == "clearbin":
@@ -117,7 +119,9 @@ def WipeUUr():
             fullfW() 
 
 def infoW():
-    asciiprint()
+
+    space()
+
     Info = f"""{bright}{cyan}
                     WipeUUr
                     By Lunar
@@ -154,50 +158,70 @@ def infoW():
     GitHub: {red}https://github.com/Luunarr/WipeUUr
     Discord: {red}https://discord.gg/zACVRwCSve {reset}"""
     print(Info)
-    Winput()
+
+    space()
 
 def helpW():
-    asciiprint()
-    Help = f"""{h} {bright}{cyan} Commands       Utilities
-    {red}_________________________________{cyan}
-    help       {red}|{cyan}  Display this menu
-    {red}_________________________________{cyan}
-    clear      {red}|{cyan}  Start cleaning
-    clearhist  {red}|{cyan}  Clean web history
-    clearbin   {red}|{cyan}  Clean recycle bin
-    flushdns   {red}|{cyan}  Clean DNS cache
-    tempfiles  {red}|{cyan}  Clean temporary files
-    defrag     {red}|{cyan}  Defragment the hard drive
-    {red}_________________________________{cyan}
-    idisk      {red}|{cyan}  Get disk information
-    ios        {red}|{cyan}  Get OS information
-    fetch      {red}|{cyan}  Get PC information
-    fullf      {red}|{cyan}  Get All information
-    {red}_________________________________{cyan}
-    exit       {red}|{cyan}  Exit WipeUUr
-    support    {red}|{cyan}  Get technical support on Discord
-    info       {red}|{cyan}  Display system or application info
-    github     {red}|{cyan}  Access the GitHub repository for this tool
-    mygithub   {red}|{cyan}  Access my personal GitHub profile"""
+
+    space()
+
+    Help = f"""{h} {bright}{cyan} Commands Overview
+{red}═════════════════════════════════════{cyan}
+
+{cyan}       Basic Commands {red}:{cyan}
+help         {red}│{cyan}  Display this help menu
+exit         {red}│{cyan}  Exit WipeUUr
+
+{red}─────────────────────────────────────{cyan}
+
+{cyan}         Cleaning {red}:{cyan}
+clear        {red}│{cyan}  Start cleaning
+clearhist    {red}│{cyan}  Clean web history
+clearbin     {red}│{cyan}  Empty the recycle bin
+flushdns     {red}│{cyan}  Clear DNS cache
+tempfiles    {red}│{cyan}  Delete temporary files
+defrag       {red}│{cyan}  Defragment the hard drive
+
+{red}─────────────────────────────────────{cyan}
+
+{cyan}     System Information {red}:{cyan}
+idisk        {red}│{cyan}  Get disk information
+ios          {red}│{cyan}  Get OS information
+fetch        {red}│{cyan}  Get PC information
+fullf        {red}│{cyan}  Get all information
+
+{red}─────────────────────────────────────{cyan}
+
+{cyan}    Additional Resources {red}:{cyan}
+support      {red}│{cyan}  Get technical support on Discord
+info         {red}│{cyan}  Display system or application info
+github       {red}│{cyan}  Access the GitHub repository for this tool
+mygithub     {red}│{cyan}  Access my personal GitHub profile"""
+
     print(Help)
-    Winput() 
+
+    space() 
 
 def clearW():
+
+    space()
+
     try:
-        asciiprint()
         clearbinW()
         clearhistW()
         flushdnsW()
         tempfilesW()
         fullfW()
-        asciiprint()
         print(f"{p} {bright}{cyan}Successfully executed '{red}clear{cyan}'")
+
     except:
         print(f"{m} {bright}{cyan}Failed to execute '{red}clear{cyan}'")
-    Winput()
+
+    space()
 
 def clearhistW():
-    asciiprint()
+
+    space()
 
     try:
         if "Chrome" in Browsers:
@@ -231,45 +255,61 @@ def clearhistW():
             print(f"Chrome: {ChromeFinish}\nEdge: {EdgeFinish}\nFirefox: {FirefoxFinish}\nOpera: {OperaFinish}\nBrave: {BraveFinish}\n")
         print(f"An error occurred: {e}")
 
-    Winput()
+    space()
 
 def clearbinW():
-    asciiprint()
+
+    space()
+
     try:
         winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
         print(f"{c} {bright}{cyan}Running 'winshell.recycle_bin()' ...")
         print(f"{p} {bright}{cyan}Your recycle bin has been cleared")
+
     except:
         print(f"{m} {bright}{cyan}Your recycle bin can't be cleared")
-    Winput()
-    
+
+    space()
+
 def flushdnsW():
-    asciiprint()
+
+    space()
+
     try:
         subprocess.run(["ipconfig", "/flushdns"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f"{c} {bright}{cyan}Running 'ipconfig /flushdns' ...")
         print(f"{p} {bright}{cyan}Your DNS has been cleared")
+
     except:
         print(f"{m} {bright}{cyan}Your DNS can't be cleared")
-    Winput()
+
+    space()
 
 def tempfilesW():
-    asciiprint()
+
+    space()
+
     print(f"{c} {bright}{cyan}Searching for temporary files to delete...")
     temp_dir = tempfile.gettempdir()
+
     try:
         for filename in os.listdir(temp_dir):
             file_path = os.path.join(temp_dir, filename)
             if os.path.isfile(file_path):
                 os.remove(file_path)
                 print(f"{p} {bright}{cyan}Temporary file {file_path} deleted")
+
     except Exception as e:
         print(f"{m} {bright}{cyan}An error occurred: {e}")
-    Winput()
+
+    space()
 
 def defragW():
-    asciiprint()
+
+    space()
+
     print(f"{c}{bright}{cyan}Starting defragmentation process...")
+
     try:
         subprocess.run(
             ["powershell", "-Command", "Start-Process", "defrag", "-ArgumentList 'C:'", "-Verb", "RunAs"],
@@ -280,15 +320,20 @@ def defragW():
     except subprocess.CalledProcessError as e:
         print(f"{m} {bright}{cyan}An error occurred during defragmentation.")
         print(f"{m} {bright}{red}{e.stderr}")
+
     except Exception as e:
         print(f"{m} {bright}{cyan}An unexpected error occurred.")
         print(f"{m} {bright}{red}{e}")
-    Winput()
+
+    space()
 
 def idiskW():
-    asciiprint()
+
+    space()
+
     memory = psutil.virtual_memory()
     disk = psutil.disk_usage('/')
+
     print(f"{h} {bright}{cyan}Disk information :")
     print(f"{p} {bright}{cyan}Total Memory: {red}{memory.total / (1024 ** 3):.2f} GB")
     print(f"{p} {bright}{cyan}Available Memory: {red}{memory.available / (1024 ** 3):.2f} GB")
@@ -297,27 +342,35 @@ def idiskW():
     print(f"{p} {bright}{cyan}Used Disk Space: {red}{disk.used / (1024 ** 3):.2f} GB")
     print(f"{p} {bright}{cyan}Free Disk Space: {red}{disk.free / (1024 ** 3):.2f} GB")
     print(f"{p} {bright}{cyan}Disk Usage: {red}{disk.percent}%")
-    Winput()
+
+    space()
 
 def iosW():
-    asciiprint()
+
+    space()
+
     ios = platform.uname()
+
     print(f"{h} {bright}{cyan}OS information :")
     print(f"{p} {bright}{cyan}System: {red}{ios.system}")
     print(f"{p} {bright}{cyan}Node Name: {red}{ios.node}")
     print(f"{p} {bright}{cyan}Release: {red}{ios.release}")
     print(f"{p} {bright}{cyan}Version: {red}{ios.version}")
     print(f"{p} {bright}{cyan}Machine: {red}{ios.machine}")
-    Winput()
+
+    space()
 
 def fetchW():
-    asciiprint()
+
+    space()
+
     boot_time_timestamp = psutil.boot_time()
     bt = datetime.fromtimestamp(boot_time_timestamp)
     ios = platform.uname()
     cpuWcount = psutil.cpu_count(logical=False)
     cpuWlogical = psutil.cpu_count(logical=True)
     cpuWfreq = psutil.cpu_freq()
+
     print(f"{h} {bright}{cyan}PC informationn :")
     print(f"{p} {bright}{cyan}System: {red}{ios.system}")
     print(f"{p} {bright}{cyan}Node Name: {red}{ios.node}")
@@ -329,10 +382,13 @@ def fetchW():
     print(f"{p} {bright}{cyan}CPU Logical Cores: {red}{cpuWlogical}")
     print(f"{p} {bright}{cyan}CPU Frequency: {red}{cpuWfreq.current:.2f} MHz")
     print(f"{p} {bright}{cyan}Boot Time: {red}{bt.year}/{bt.month}/{bt.day} {bt.hour}:{bt.minute}:{bt.second}")
-    Winput()
+
+    space()
 
 def fullfW():
-    asciiprint()
+
+    space()
+
     memory = psutil.virtual_memory()
     disk = psutil.disk_usage('/')
     boot_time_timestamp = psutil.boot_time()
@@ -341,6 +397,7 @@ def fullfW():
     cpuWcount = psutil.cpu_count(logical=False)
     cpuWlogical = psutil.cpu_count(logical=True)
     cpuWfreq = psutil.cpu_freq()
+
     print(f"{h} {bright}{cyan}OS Information :")
     print(f"{p} {bright}{cyan}System: {red}{ios.system}")
     print(f"{p} {bright}{cyan}Node Name: {red}{ios.node}")
@@ -365,19 +422,22 @@ def fullfW():
     print(f"{p} {bright}{cyan}Used Disk Space: {red}{disk.used / (1024 ** 3):.2f} GB")
     print(f"{p} {bright}{cyan}Free Disk Space: {red}{disk.free / (1024 ** 3):.2f} GB")
     print(f"{p} {bright}{cyan}Disk Usage: {red}{disk.percent}%")
-    Winput()
+
+    space()
 
 def remove(path):
+
     try:
         if os.path.exists(path):
             os.remove(path)
             print(f"{c} {bright}{cyan}Deleted {path}")
+
     except:
         print(f"{m} {bright}{cyan}Failed to delete {path}")
 
 def clearhistWchrome():
+    
     try:
-        asciiprint()
         paths = [
             os.path.expanduser("~\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History"),
             os.path.expanduser("~\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cookies")
@@ -385,12 +445,13 @@ def clearhistWchrome():
         for path in paths:
             remove(path)
         print(f"{p} {bright}{cyan}Chrome history cleared")
+
     except:
         print(f"{m} {bright}{cyan}Failed to clear Chrome history")
 
 def clearhistWedge():
+
     try:
-        asciiprint()
         paths = [
             os.path.expanduser("~\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\History"),
             os.path.expanduser("~\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cookies")
@@ -398,23 +459,25 @@ def clearhistWedge():
         for path in paths:
             remove(path)
         print(f"{p} {bright}{cyan}Edge history cleared")
+
     except:
         print(f"{m} {bright}{cyan}Failed to clear Edge history")
 
 def clearhistWfirefox():
+
     try:
-        asciiprint()
         profile_dir = os.path.expanduser("~\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles")
         for profile in os.listdir(profile_dir):
             history_path = os.path.join(profile_dir, profile, "places.sqlite")
             remove(history_path)
         print(f"{p} {bright}{cyan}Firefox history cleared")
+
     except:
         print(f"{m} {bright}{cyan}Failed to clear Firefox history")
 
 def clearhistWopera():
+
     try:
-        asciiprint()
         paths = [
             os.path.expanduser("~\\AppData\\Roaming\\Opera Software\\Opera Stable\\History"),
             os.path.expanduser("~\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\History")
@@ -422,12 +485,13 @@ def clearhistWopera():
         for path in paths:
             remove(path)
         print(f"{p} {bright}{cyan}Opera history cleared")
+
     except:
         print(f"{m} {bright}{cyan}Failed to clear Opera history")
 
 def clearhistWbrave():
+
     try:
-        asciiprint()
         paths = [
             os.path.expanduser("~\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\History"),
             os.path.expanduser("~\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Cookies")
@@ -435,6 +499,7 @@ def clearhistWbrave():
         for path in paths:
             remove(path)
         print(f"{p} {bright}{cyan}Brave history cleared")
+
     except:
         print(f"{m} {bright}{cyan}Failed to clear Brave history")
 
