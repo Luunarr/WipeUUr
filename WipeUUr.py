@@ -61,6 +61,8 @@ from Features.Fonction import *
 init(autoreset=True)
 Menu = None
 
+# ═══════════════════════════════════════════════════════════════════════════════
+
 try:
     with open("Features\Config.json", "r") as f:
         data = json.load(f)
@@ -78,50 +80,113 @@ try:
 except:
     pass
 
+# ════════════════════════════ Principal Def ════════════════════════════════════
 
-def WipeUUr():  
+def MenuPrint(MenuChoice):
+    MenuActions = {
+        "1": asciiprint,
+        "2": menuAscii_2001,
+        "3": menuAscii_2001,
+    }
+    action = MenuActions.get(MenuChoice, asciiprint)
+    action()
 
-    if Menu == "1":
-        asciiprint()
-    elif Menu == "2":
-        menuAscii_2001()
-    elif Menu == "3":
-        menuAscii_2001()
-    else:
-        asciiprint()
 
-    while True: 
+# ══════════ Cleaning ═════════════════
+
+def Cleaning():
+    os.system("cls")
+    while True:
+        cleaning_menuAscii_2001()
         Wi = input(prompt)
-        if Wi in ["h", "H", "help", "Help"]:
-            helpW()
 
-        elif Wi == "exit":
-            exit()
+        if Wi in ["1", "Clearhist", "clearhist", "ch", "CH"]:
+            clearhistW()
 
         elif Wi in ["cls", "clr"]:
-            if Menu == "1":
-                asciiprint()
-            elif Menu == "2":
-                menuAscii_2001()
-            elif Menu == "3":
-                menuAscii_2001()
-            else:
-                asciiprint()
+            os.system("cls")
 
-        elif Wi == "clear":
-            clearW()
 
-        elif Wi == "github":
+        elif Wi in ["2","clear","Clear"]:
+            clearbinW()    
+    
+        elif Wi in ["3","clearbin","Clearbin","cb"]:
+            clearbinW()
 
+        elif Wi in ["4","Tempfiles","tempfiles","tf"]:
+            clearbinW()
+
+        elif Wi in ["5","Flushdns","flushdns","fd"]:
+            clearbinW()
+
+        elif Wi in ["6","Defrag","defrag","df"]:
+            clearbinW()
+
+        elif Wi == "exit":
+            break
+
+
+# ══════════ Sys Infos ═════════════════
+
+def SysInfo():
+    os.system("cls")
+    while True:
+        sysinfo_menuAscii_2001()
+        Wi = input(prompt)
+
+        if Wi in ["cls", "clr"]:
+            os.system("cls")
+
+        elif Wi in ["1","fetch","Fetch", "ft"]: 
+            fetchW()    
+
+        elif Wi in ["2","fullf","Fullf", "FullFetch", "ff"]:
+            fullfW()   
+
+        elif Wi in ["3","MyOs","myos", "mo", "MO"]:
+            iosW()   
+
+        elif Wi in ["4","MyDisk","mydisk", "md"]:
+            idiskW()   
+
+        elif Wi in ["5","Network","network", "nk"]:
+            input()   
+
+        elif Wi == "exit":
+            break
+
+# ══════════ Extras ═════════════════
+
+def Extras():
+    os.system("cls")
+    while True:
+        extras_menuAscii_2001()
+        Wi = input(prompt)
+
+        if Wi in ["cls", "clr"]:
+            os.system("cls")
+
+        elif Wi in ["1","info","Info", "inf"]: 
+            infoW()    
+
+        elif Wi in ["2","Github","github", "gh"]:
             space()
 
             webbrowser.open("https://github.com/Luunarr/WipeUUr")  
             print(f"{l} {bright}{cyan}https://github.com/Luunarr/WipeUUr {reset}")
 
+            space() 
+
+        elif Wi in ["3","Support","support", "supp", "sp"]:
+
             space()
 
-        elif Wi == "mygithub":
+            webbrowser.open("https://discord.gg/zACVRwCSve")  
+            print(f"{l} {bright}{cyan}https://discord.gg/zACVRwCSve {reset}")
 
+            space() 
+
+        elif Wi in ["4","MyGithub","MYGITHUB", "mygithub", "mgh"]:
             space()
 
             webbrowser.open("https://github.com/Luunarr")    
@@ -129,47 +194,115 @@ def WipeUUr():
 
             space()
 
-        elif Wi == "info":
-            infoW()
+        elif Wi == "exit":
+            break
 
-        elif Wi == "support":
+# ═══════════════════════════════════════════════════════════════════════════════
 
-            space()
+def WipeUUr():  
 
-            webbrowser.open("https://discord.gg/zACVRwCSve")  
-            print(f"{l} {bright}{cyan}https://discord.gg/zACVRwCSve {reset}")
+    MenuPrint(Menu)
 
-            space()
+    while True: 
+        if Menu == "1":
+            while True:
+                Wi = input(prompt)
 
-        elif Wi == "clearhist":
-            clearhistW()
+                if Wi in ["h", "H", "help", "Help"]:
+                    helpW()
 
-        elif Wi == "clearbin":
-            clearbinW()
+                elif Wi == "exit":
+                    exit()
 
-        elif Wi == "flushdns":
-            flushdnsW() 
-
-        elif Wi == "tempfiles":
-            tempfilesW()  
-
-        elif Wi == "defrag":
-            defragW()  
-
-        elif Wi == "idisk":
-            idiskW() 
-
-        elif Wi == "ios":
-            iosW()  
-
-        elif Wi == "fetch":
-            fetchW() 
-
-        elif Wi == "fullf":
-            fullfW() 
+                elif Wi in ["cls", "clr"]:
+                    MenuPrint(Menu)
 
 
+                elif Wi == "clear":
+                    clearW()
 
+                elif Wi == "github":
+
+                    space()
+
+                    webbrowser.open("https://github.com/Luunarr/WipeUUr")  
+                    print(f"{l} {bright}{cyan}https://github.com/Luunarr/WipeUUr {reset}")
+
+                    space()
+
+                elif Wi == "mygithub":
+
+                    space()
+
+                    webbrowser.open("https://github.com/Luunarr")    
+                    print(f"{l} {bright}{cyan}https://github.com/Luunarr {reset}")
+
+                    space()
+
+                elif Wi == "info":
+                    infoW()
+
+                elif Wi == "support":
+
+                    space()
+
+                    webbrowser.open("https://discord.gg/zACVRwCSve")  
+                    print(f"{l} {bright}{cyan}https://discord.gg/zACVRwCSve {reset}")
+
+                    space()
+
+                elif Wi == "clearhist":
+                    clearhistW()
+
+                elif Wi == "clearbin":
+                    clearbinW()
+
+                elif Wi == "flushdns":
+                    flushdnsW() 
+
+                elif Wi == "tempfiles":
+                    tempfilesW()  
+
+                elif Wi == "defrag":
+                    defragW()  
+
+                elif Wi == "idisk":
+                    idiskW() 
+
+                elif Wi == "ios":
+                    iosW()  
+
+                elif Wi == "fetch":
+                    fetchW() 
+
+                elif Wi == "fullf":
+                    fullfW() 
+
+        elif Menu == "2":
+            while True:
+                Wi = input(prompt)
+
+                if Wi in ["1", "Cleaning", "cleaning", "clng", "clg"]:
+                    Cleaning()
+
+                elif Wi in ["2", "SysInfo", "sysinfo", "si", "SI"]:
+                    SysInfo()
+
+                elif Wi in ["3", "Extras", "extras", "Ex", "ex"]:
+                    Extras()
+
+                elif Wi in ["exit", "quitter", "leave"]:
+                    exit()
+
+        elif Menu == "3":
+            while True:
+                Wi = input(prompt)
+
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
     WipeUUr()
+
+# ═══════════════════════════════════════════════════════════════════════════════
