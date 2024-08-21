@@ -93,16 +93,19 @@ def WipeUUr():
         elif Wi == "clear":
             clearW()
         elif Wi == "github":
+            asciiprint()
             webbrowser.open("https://github.com/Luunarr/WipeUUr")  
             print(f"{l} {Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr/WipeUUr {Style.RESET_ALL}")
             Winput()
         elif Wi == "mygithub":
+            asciiprint()
             webbrowser.open("https://github.com/Luunarr")    
             print(f"{l} {Style.BRIGHT}{Fore.CYAN}https://github.com/Luunarr {Style.RESET_ALL}")
             Winput()
         elif Wi == "info":
             infoW()
         elif Wi == "support":
+            asciiprint()
             webbrowser.open("https://discord.gg/zACVRwCSve")  
             print(f"{l} {Style.BRIGHT}{Fore.CYAN}https://discord.gg/zACVRwCSve {Style.RESET_ALL}")
             Winput()
