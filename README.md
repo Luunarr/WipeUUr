@@ -1,4 +1,4 @@
-# WipeUUr
+# 🧹 WipeUUr
 
 **WipeUUr** is a command-line utility designed to streamline your system's maintenance by offering the following features:
 
@@ -18,7 +18,7 @@
 
 Created by Lunar, WipeUUr is currently in its early development stage (version 0.5#Wip).
 
-## Features
+## 📜 Features
 
 - **Clear Web Browser Histories**:
   - **Chrome**: Remove browsing data including history, cookies, and cache.
@@ -67,7 +67,7 @@ Created by Lunar, WipeUUr is currently in its early development stage (version 0
 - **Access Personal GitHub Profile**:
   - Explore other projects and contributions on the personal GitHub profile.
 
-## Requirements
+## ❗ Requirements
 
 0. Before running the script, install the required Python packages using (Put **"False"** after installation, Path: **Features\Config.json**):
 
@@ -77,7 +77,7 @@ Created by Lunar, WipeUUr is currently in its early development stage (version 0
     }
     ```
     
-## How to Use
+## ❓ How to Use
 
 1. Clone the repository:
 
@@ -99,7 +99,7 @@ Created by Lunar, WipeUUr is currently in its early development stage (version 0
 
 4. Follow the on-screen prompts to use the tool.
 
-## Commands
+## 🤖 Commands
 
 - `help`      - Display the command menu
 - `clear`     - Start the cleaning process
@@ -118,7 +118,7 @@ Created by Lunar, WipeUUr is currently in its early development stage (version 0
 - `github`    - Visit the GitHub repository for this tool
 - `mygithub`  - View the personal GitHub profile
 
-## Contact
+## 📞 Contact
 
 - **GitHub:** [Luunarr/WipeUUr](https://github.com/Luunarr/WipeUUr)
 - **Discord:** [Join Support Channel](https://discord.gg/zACVRwCSve)
