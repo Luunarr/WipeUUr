@@ -103,51 +103,35 @@ def helpW():
 
     space()
 
-    Help = f"""{h} {bright}{gray}
+    Help = f"""                                        ╔═════════════╗
+                                        ║ Cleaning    ║
+                                        ╚══╦══════════╝                                
+                                           ╠  clear      │  Start cleaning
+                                           ╠  clearhist  │  Clean web history
+                                           ╠  clearbin   │  Empty the recycle bin
+                                           ╠  flushdns   │  Clear DNS cache
+                           ║               ╠  tempfiles  │  Delete temporary files
+                         ╔═╩═══════════╗   ╠  defrag     │  Defragment the hard drive
+                         ║             ║   ║
+                         ╚════════╦════╝   ║   ╔══════════════╗                ╔═════════════╗
+                                  ╚════════╬═══╣   WipeUUr    ╠═════════════╦══╣ Sys Info    ╠════════════════╗
+                                           ║   ╚╦══════╦══════╝             ║  ╚═════════════╝                ║
+                          ╔════════════════╝    ║      ║                    ╠        │                        ║
+               ╔══════════╩══╗                  ║      ║                    ╠ idisk  │  Get disk information  ║
+               ║ soon        ║  ╔═════════════╗ ║      ║                    ╠ ios    │  Get OS information    ║
+               ╚═════════════╝  ║ Basic       ╠═╝      ║  ╔═════════════╗   ╠ fetch  │  Get PC information    ║
+                                ╚═════╦═══════╝        ╚══╣ Extras      ║   ╠ fullf  │  Get all information   ║
+                                      ║                   ╚═════════╦═══╩═══╩═════════════════════════════════╩═════════════════╗    
+                                      ║                             ╠                                                           ║ 
+               exit  │  Exit WipeUUr  ╣                             ╠            │                                              ║
+                                      ╣                             ╠  support   │  Get technical support on Discord            ║
+                                      ╣                             ╠  info      │  Display system or application info          ║
+                                      ╝                             ╠  github    │  Access the GitHub repository for this tool  ║
+                                                                    ╠  mygithub  │  Access my personal GitHub profile           ║
+                                                                    ╚═══════════════════════════════════════════════════════════╝"""
+    help = Help.replace("═", f"{cyan}═{reset}").replace("╩", f"{cyan}╩{reset}").replace("╦", f"{cyan}╦{reset}").replace("║", f"{cyan}║{reset}").replace("╣", f"{cyan}╣{reset}").replace("╗", f"{red}╗{reset}").replace("╝", f"{red}╝{reset}").replace("╚", f"{red}╚{reset}").replace("╔", f"{red}╔{reset}").replace("╬", f"{cyan}╬{reset}").replace("╠", f"{cyan}╠{reset}")
 
-             _          _       
-            | |        | |      
-            | |__   ___| |_ __  
-            | '_ \ / _ \ | '_ \ 
-            | | | |  __/ | |_) |
-            |_| |_|\___|_| .__/ 
-                         | |    
-                         |_|    
-
-           {cyan} Commands Overview
-{red}═══════════════════════════════════════════════{cyan}
-
-{cyan}              Basic Commands {red}:{cyan}
-       help         {red}│{cyan}  Display this help menu
-       exit         {red}│{cyan}  Exit WipeUUr
-
-{red}═══════════════════════════════════════════════{cyan}
-
-{cyan}               Cleaning {red}:{cyan}
-       clear        {red}│{cyan}  Start cleaning
-       clearhist    {red}│{cyan}  Clean web history
-       clearbin     {red}│{cyan}  Empty the recycle bin
-       flushdns     {red}│{cyan}  Clear DNS cache
-       tempfiles    {red}│{cyan}  Delete temporary files
-       defrag       {red}│{cyan}  Defragment the hard drive
-
-{red}═══════════════════════════════════════════════{cyan}
-
-{cyan}           System Information {red}:{cyan}
-       idisk        {red}│{cyan}  Get disk information
-       ios          {red}│{cyan}  Get OS information
-       fetch        {red}│{cyan}  Get PC information
-       fullf        {red}│{cyan}  Get all information
-
-{red}═══════════════════════════════════════════════{cyan}
-
-{cyan}        Additional Resources {red}:{cyan}
-       support      {red}│{cyan}  Get technical support on Discord
-       info         {red}│{cyan}  Display system or application info
-       github       {red}│{cyan}  Access the GitHub repository for this tool
-       mygithub     {red}│{cyan}  Access my personal GitHub profile"""
-
-    print(Help)
+    print(help)
 
     space() 
 
@@ -295,19 +279,19 @@ def idiskW():
 
     space()
 
-    memory = psutil.virtual_memory()
-    disk = psutil.disk_usage('/')
+    partitions = psutil.disk_partitions()
 
-    print(f"{h} {bright}{cyan}Disk information :")
-    print(f"{p} {bright}{cyan}Total Memory: {red}{memory.total / (1024 ** 3):.2f} GB")
-    print(f"{p} {bright}{cyan}Available Memory: {red}{memory.available / (1024 ** 3):.2f} GB")
-    print(f"{p} {bright}{cyan}Memory Usage: {red}{memory.percent}%")
-    print(f"{p} {bright}{cyan}Total Disk Space: {red}{disk.total / (1024 ** 3):.2f} GB")
-    print(f"{p} {bright}{cyan}Used Disk Space: {red}{disk.used / (1024 ** 3):.2f} GB")
-    print(f"{p} {bright}{cyan}Free Disk Space: {red}{disk.free / (1024 ** 3):.2f} GB")
-    print(f"{p} {bright}{cyan}Disk Usage: {red}{disk.percent}%")
+    for partition in partitions:
+        
+        print(f"{h} {bright}{cyan}Disk Information for {partition.device}:")
 
-    space()
+        disk = psutil.disk_usage(partition.mountpoint)
+
+        print(f"{p} {bright}{cyan}Mount Point: {red}{partition.mountpoint}")
+        print(f"{p} {bright}{cyan}Total Disk Space: {red}{getWsize(disk.total)}")
+        print(f"{p} {bright}{cyan}Used Disk Space: {red}{getWsize(disk.used)}")
+        print(f"{p} {bright}{cyan}Free Disk Space: {red}{getWsize(disk.free)}")
+        print(f"{p} {bright}{cyan}Disk Usage: {red}{disk.percent}%")
 
 # ——————————————————————————————————————————————————— OsInfo Fonction ————————————————————————————————————————————————
 
@@ -333,10 +317,15 @@ def fetchW():
     space()
 
     boot_time_timestamp = psutil.boot_time()
+
     bt = datetime.fromtimestamp(boot_time_timestamp)
+
     ios = platform.uname()
+
     cpuWcount = psutil.cpu_count(logical=False)
+
     cpuWlogical = psutil.cpu_count(logical=True)
+
     cpuWfreq = psutil.cpu_freq()
 
     print(f"{h} {bright}{cyan}PC informationn :")
@@ -355,18 +344,34 @@ def fetchW():
 
 # ——————————————————————————————————————————————————— FullInfo Fonction ——————————————————————————————————————————————
 
-def fullfW():
+def getWsize(bytes):
+    for unit in ['', 'K', 'M', 'G', 'T', 'P']:
+        if bytes < 1024:
+            return f"{bytes:.2f} {unit}B"
+        bytes /= 1024
 
+def fullfW():
     space()
 
     memory = psutil.virtual_memory()
+
     disk = psutil.disk_usage('/')
+
     boot_time_timestamp = psutil.boot_time()
+
     bt = datetime.fromtimestamp(boot_time_timestamp)
+
     ios = platform.uname()
+
     cpuWcount = psutil.cpu_count(logical=False)
+
     cpuWlogical = psutil.cpu_count(logical=True)
+
     cpuWfreq = psutil.cpu_freq()
+
+    ifWaddrs = psutil.net_if_addrs()
+
+    netWioperWnic = psutil.net_io_counters(pernic=True)
 
     print(f"{h} {bright}{cyan}OS Information :")
     print(f"{p} {bright}{cyan}System: {red}{ios.system}")
@@ -376,24 +381,135 @@ def fullfW():
     print(f"{p} {bright}{cyan}Machine: {red}{ios.machine}")
     print(f"{p} {bright}{cyan}Processor: {red}{ios.processor}")
     print(f"{p} {bright}{cyan}Boot Time: {red}{bt.year}/{bt.month}/{bt.day} {bt.hour}:{bt.minute}:{bt.second}")
-    print("")
+
+    space()
+
     print(f"{h} {bright}{cyan}CPU Information :")
     print(f"{p} {bright}{cyan}CPU Physical Cores: {red}{cpuWcount}")
     print(f"{p} {bright}{cyan}CPU Logical Cores: {red}{cpuWlogical}")
     print(f"{p} {bright}{cyan}CPU Frequency: {red}{cpuWfreq.current:.2f} MHz")
-    print("")
+
+    space()
+
     print(f"{h} {bright}{cyan}Memory Information :")
     print(f"{p} {bright}{cyan}Total Memory: {red}{memory.total / (1024 ** 3):.2f} GB")
     print(f"{p} {bright}{cyan}Available Memory: {red}{memory.available / (1024 ** 3):.2f} GB")
     print(f"{p} {bright}{cyan}Memory Usage: {red}{memory.percent}%")
-    print("")
-    print(f"{h} {bright}{cyan}Disk Information :")
-    print(f"{p} {bright}{cyan}Total Disk Space: {red}{disk.total / (1024 ** 3):.2f} GB")
-    print(f"{p} {bright}{cyan}Used Disk Space: {red}{disk.used / (1024 ** 3):.2f} GB")
-    print(f"{p} {bright}{cyan}Free Disk Space: {red}{disk.free / (1024 ** 3):.2f} GB")
-    print(f"{p} {bright}{cyan}Disk Usage: {red}{disk.percent}%")
 
     space()
+
+    partitions = psutil.disk_partitions()
+
+    for partition in partitions:
+
+        print(f"{h} {bright}{cyan}Disk Information for {partition.device}:")
+
+        disk = psutil.disk_usage(partition.mountpoint)
+
+        print(f"{p} {bright}{cyan}Mount Point: {red}{partition.mountpoint}")
+        print(f"{p} {bright}{cyan}Total Disk Space: {red}{getWsize(disk.total)}")
+        print(f"{p} {bright}{cyan}Used Disk Space: {red}{getWsize(disk.used)}")
+        print(f"{p} {bright}{cyan}Free Disk Space: {red}{getWsize(disk.free)}")
+        print(f"{p} {bright}{cyan}Disk Usage: {red}{disk.percent}%")
+        space()
+
+    for interface_name, interface_addresses in ifWaddrs.items():
+
+        print(f"{h} {bright}{cyan}{interface_name}: ")
+        for address in interface_addresses:
+            if str(address.family) == 'AddressFamily.AF_INET':
+                print(f"{p} {bright}{cyan}IP Address: {red}{address.address}")
+                print(f"{p} {bright}{cyan}Netmask: {red}{address.netmask}")
+                print(f"{p} {bright}{cyan}Broadcast IP: {red}{address.broadcast}")
+            elif str(address.family) == 'AddressFamily.AF_PACKET':
+                print(f"{p} {bright}{cyan}MAC Address: {red}{address.address}")
+                print(f"{p} {bright}{cyan}Netmask: {red}{address.netmask}")
+                print(f"{p} {bright}{cyan}Broadcast MAC: {red}{address.broadcast}")
+
+        stats = psutil.net_if_stats()[interface_name]
+        print(f"{p} {bright}{cyan}Is Up: {red}{stats.isup}")
+        print(f"{p} {bright}{cyan}Duplex: {red}{stats.duplex}")
+        print(f"{p} {bright}{cyan}Speed: {red}{stats.speed} Mbps")
+        print(f"{p} {bright}{cyan}MTU: {red}{stats.mtu}")
+
+    space()
+
+    netWio = psutil.net_io_counters()
+    print(f"{p} {bright}{cyan}Total Bytes Sent: {red}{getWsize(netWio.bytes_sent)}")
+    print(f"{p} {bright}{cyan}Total Bytes Received: {red}{getWsize(netWio.bytes_recv)}")
+
+    space()
+
+    for interface, stats in netWioperWnic.items():
+        print(f"{h} {bright}{cyan}{interface}: ")
+        print(f"{p} {bright}{cyan}Total Bytes Sent: {red}{getWsize(stats.bytes_sent)}")
+        print(f"{p} {bright}{cyan}Total Bytes Received: {red}{getWsize(stats.bytes_recv)}")
+
+        space()
+
+def myNtw():
+
+    ifWaddrs = psutil.net_if_addrs()
+
+    for interface_name, interface_addresses in ifWaddrs.items():
+
+        space()
+
+        print(f"{h} {bright}{cyan}{interface_name}: ")
+
+        for address in interface_addresses:
+            
+            if str(address.family) == 'AddressFamily.AF_INET':
+                
+                print(f"{p} {bright}{cyan}IP Address: {red}{address.address}")
+                print(f"{p} {bright}{cyan}Netmask: {red}{address.netmask}")
+                print(f"{p} {bright}{cyan}Broadcast IP: {red}{address.broadcast}")
+
+            elif str(address.family) == 'AddressFamily.AF_PACKET':
+
+                print(f"{p} {bright}{cyan}MAC Address: {red}{address.address}")
+                print(f"{p} {bright}{cyan}Netmask: {red}{address.netmask}")
+                print(f"{p} {bright}{cyan}Broadcast MAC: {red}{address.broadcast}")
+
+        stats = psutil.net_if_stats()[interface_name]
+
+        print(f"{p} {bright}{cyan}Is Up: {red}{stats.isup}")
+        print(f"{p} {bright}{cyan}Duplex: {red}{stats.duplex}")
+        print(f"{p} {bright}{cyan}Speed: {red}{stats.speed} Mbps")
+        print(f"{p} {bright}{cyan}MTU: {red}{stats.mtu}")
+
+    netWioperWnic = psutil.net_io_counters(pernic=True)
+
+    for interface, stats in netWioperWnic.items():
+
+        space()
+
+        print(f"{h} {bright}{cyan}{interface}: ")
+        print(f"{p} {bright}{cyan}Bytes Sent: {red}{getWsize(stats.bytes_sent)}")
+        print(f"{p} {bright}{cyan}Bytes Received: {red}{getWsize(stats.bytes_recv)}")
+        print(f"{p} {bright}{cyan}Packets Sent: {red}{stats.packets_sent}")
+        print(f"{p} {bright}{cyan}Packets Received: {red}{stats.packets_recv}")
+        print(f"{p} {bright}{cyan}Errors In: {red}{stats.errin}")
+        print(f"{p} {bright}{cyan}Errors Out: {red}{stats.errout}")
+        print(f"{p} {bright}{cyan}Dropped In: {red}{stats.dropin}")
+        print(f"{p} {bright}{cyan}Dropped Out: {red}{stats.dropout}")
+
+    netWio = psutil.net_io_counters()
+
+    space()
+
+    print(f"{p} {bright}{cyan}Total Bytes Sent: {red}{getWsize(netWio.bytes_sent)}")
+    print(f"{p} {bright}{cyan}Total Bytes Received: {red}{getWsize(netWio.bytes_recv)}")
+
+    space()
+
+    for interface, stats in psutil.net_io_counters(pernic=True).items():
+
+        print(f"{h} {bright}{cyan}{interface}: ")
+        print(f"{p} {bright}{cyan}Total Bytes Sent: {red}{getWsize(stats.bytes_sent)}")
+        print(f"{p} {bright}{cyan}Total Bytes Received: {red}{getWsize(stats.bytes_recv)}")
+
+        space()
 
 # ——————————————————————————————————————————————————— Remove Fonction ———————————————————————————————————————————————
 
