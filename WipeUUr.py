@@ -1,39 +1,55 @@
-##################################################
-#                    WipeUUr
-#                    By Lunar
-#                Version: 0.5#Wip
+#      _    _ _            _   _ _   _                 _              _ 
+#     | |  | (_)          | | | | | | |               | |            | |
+#     | |  | |_ _ __   ___| | | | | | |_ __   ______  | |_ ___   ___ | |
+#     | |/\| | | '_ \ / _ \ | | | | | | '__| |______| | __/ _ \ / _ \| |
+#     \  /\  / | |_) |  __/ |_| | |_| | |             | || (_) | (_) | |
+#      \/  \/|_| .__/ \___|\___/ \___/|_|              \__\___/ \___/|_|
+#              | |                                                      
+#              |_|                                                      
 #
-#   Description:
-#   WipeUUr is a command-line utility designed to help users maintain their system's 
-#   cleanliness. Although still in its early development phase, it offers a variety 
-#   of functions to keep your system running smoothly. WipeUUr allows you to clear browser 
-#   histories, empty the recycle bin, flush the DNS cache, clean temporary files, and 
-#   defragment your hard drive. Additionally, it provides commands to retrieve disk and 
-#   operating system information. For users seeking technical support or more information
-#   about the tool, WipeUUr also offers options to connect to a Discord support channel, 
-#   access the GitHub repository, or view the developer's GitHub profile.
+#                          Version: 0.5.5#Wip
 #
-#   Features:
-#   - Display help menu with available commands
-#   - Clear web history, recycle bin, and temporary files
-#   - Flush DNS cache
-#   - Defragment the hard drive
-#   - Retrieve disk, OS, and PC information
-#   - Fetch detailed system information
-#   - Connect to Discord for technical support
-#   - Access the GitHub repository and developer's profile
+# ═══════════════════════════════════════════════════════════════════════════════
 #
-#   Copyright (c) 2024 Lunar
+#                         Owner : @Lunar
+#                   Collaborator : @NomFascinant
 #
-#   License:
-#   This project is licensed under the Apache License 2.0 - see
-#   the LICENSE file for details.
+# ═══════════════════════════════════════════════════════════════════════════════
 #
-#   Contact:
-#   For any questions or feedback, please reach out to:
-#   GitHub: https://github.com/Luunarr/WipeUUr
-#   Discord: https://discord.gg/zACVRwCSve
-##################################################
+# Description:
+#        WipeUUr is a command-line utility designed to help users maintain 
+#        their system's cleanliness. Although still in its early development 
+#        phase, it offers a variety of functions to keep your system running 
+#        smoothly. WipeUUr allows you to clear browser histories, empty the 
+#        recycle bin, flush the DNS cache, clean temporary files, and defragment 
+#        your hard drive. Additionally, it provides commands to retrieve disk 
+#        and operating system information. For users seeking technical support 
+#        or more information about the tool, WipeUUr also offers options to 
+#        connect to a Discord support channel, access the GitHub repository, 
+#        or view the developer's GitHub profile.
+#
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# Features:
+#        - Display help menu with available commands
+#        - Clear web history, recycle bin, and temporary files
+#        - Flush DNS cache
+#        - Defragment the hard drive
+#        - Retrieve disk, OS, and PC information
+#        - Fetch detailed system information
+#        - Connect to Discord for technical support
+#        - Access the GitHub repository and developer's profile
+#
+# ═══════════════════════════════════════════════════════════════════════════════
+#                     Copyright (c) 2024 Lunar
+#
+# License:
+#        This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
+#
+# Contact:
+#        For any questions or feedback, please reach out to:
+#                GitHub: https://github.com/Luunarr/WipeUUr
+#                Discord: https://discord.gg/zACVRwCSve
 
 from Fonction.Utils import *
 import json
@@ -47,23 +63,16 @@ try:
 except:
     pass
 
-prompt = f"{i} {bright}{cyan}Wipe{red}UU{cyan}r {red}${reset} "
-
-asciiW = f"""{bright}{cyan}     _ _ _ _         {red}_____ _____     
-    {cyan}| | | |_|___ ___{red}|  |  |  |  |{cyan}___    {bright}{tagV}{bright}
-    {cyan}| | | | | . | -_{red}|  |  |  |  |{cyan}  _|   {bright}{tagA}{bright}
-    {cyan}|_____|_|  _|___{red}|_____|_____|{cyan}_|  
-    {cyan}        |_|  
-
-{h} {bright}{cyan}Type '{red}help{cyan}' for assistance{reset}"""
-
 def clear():
+
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def space():
+
     print("")
 
 def asciiprint():
+
     clear()
     print(asciiW)
     print("")
@@ -77,42 +86,70 @@ def WipeUUr():
         Wi = input(prompt)
         if Wi in ["h", "H", "help", "Help"]:
             helpW()
+
         elif Wi == "exit":
             exit()
+
         elif Wi in ["cls", "clr"]:
             asciiprint()
+
         elif Wi == "clear":
             clearW()
+
         elif Wi == "github":
+
+            space()
+
             webbrowser.open("https://github.com/Luunarr/WipeUUr")  
             print(f"{l} {bright}{cyan}https://github.com/Luunarr/WipeUUr {reset}")
+
             space()
+
         elif Wi == "mygithub":
+
+            space()
+
             webbrowser.open("https://github.com/Luunarr")    
             print(f"{l} {bright}{cyan}https://github.com/Luunarr {reset}")
+
             space()
+
         elif Wi == "info":
             infoW()
+
         elif Wi == "support":
+
+            space()
+
             webbrowser.open("https://discord.gg/zACVRwCSve")  
             print(f"{l} {bright}{cyan}https://discord.gg/zACVRwCSve {reset}")
+
             space()
+
         elif Wi == "clearhist":
             clearhistW()
+
         elif Wi == "clearbin":
             clearbinW()
+
         elif Wi == "flushdns":
-            flushdnsW()  
+            flushdnsW() 
+
         elif Wi == "tempfiles":
             tempfilesW()  
+
         elif Wi == "defrag":
             defragW()  
+
         elif Wi == "idisk":
             idiskW() 
+
         elif Wi == "ios":
             iosW()  
+
         elif Wi == "fetch":
             fetchW() 
+
         elif Wi == "fullf":
             fullfW() 
 
@@ -120,41 +157,59 @@ def infoW():
 
     space()
 
-    Info = f"""{bright}{cyan}
-                    WipeUUr
-                    By Lunar
-                Version: {red}0.5#Wip
+    Info = f"""{bright}{gray}
+     _    _ _            _   _ _   _                 _              _ 
+    | |  | (_)          | | | | | | |               | |            | |
+    | |  | |_ _ __   ___| | | | | | |_ __   ______  | |_ ___   ___ | |
+    | |/\| | | '_ \ / _ \ | | | | | | '__| |______| | __/ _ \ / _ \| |
+    \  /\  / | |_) |  __/ |_| | |_| | |             | || (_) | (_) | |
+     \/  \/|_| .__/ \___|\___/ \___/|_|              \__\___/ \___/|_|
+             | |                                                      
+             |_|                                                      
 
-    {red}Description:{cyan}
-    WipeUUr is a command-line utility designed to help users maintain their system's 
-    cleanliness. Although still in its early development phase, it offers a variety 
-    of functions to keep your system running smoothly. WipeUUr allows you to clear browser 
-    histories, empty the recycle bin, flush the DNS cache, clean temporary files, and 
-    defragment your hard drive. Additionally, it provides commands to retrieve disk and 
-    operating system information. For users seeking technical support or more information
-    about the tool, WipeUUr also offers options to connect to a Discord support channel, 
-    access the GitHub repository, or view the developer's GitHub profile.
+                         {cyan}Version: {red}0.5.5#Wip
 
-    {red}Features:{cyan}
-    - Display help menu with available commands
-    - Clear web history, recycle bin, and temporary files
-    - Flush DNS cache
-    - Defragment the hard drive
-    - Retrieve disk, OS, and PC information
-    - Fetch detailed system information
-    - Connect to Discord for technical support
-    - Access the GitHub repository and developer's profile
+{red}═══════════════════════════════════════════════════════════════════════════════
 
-    {red}Copyright (c) 2024 Lunar{cyan}
+{cyan}                        Owner : {mention}{bright}{red}Lunar
+{cyan}                  Collaborator : {mention}{bright}{red}NomFascinant
 
-    {red}License:{cyan}
-    This project is licensed under the Apache License 2.0 - see
-    the LICENSE file for details.
+{red}═══════════════════════════════════════════════════════════════════════════════
 
-    {red}Contact:{cyan}
-    For any questions or feedback, please reach out to:
-    GitHub: {red}https://github.com/Luunarr/WipeUUr
-    Discord: {red}https://discord.gg/zACVRwCSve {reset}"""
+{red}Description:{cyan}
+       WipeUUr is a command-line utility designed to help users maintain 
+       their system's cleanliness. Although still in its early development 
+       phase, it offers a variety of functions to keep your system running 
+       smoothly. WipeUUr allows you to clear browser histories, empty the 
+       recycle bin, flush the DNS cache, clean temporary files, and defragment 
+       your hard drive. Additionally, it provides commands to retrieve disk 
+       and operating system information. For users seeking technical support 
+       or more information about the tool, WipeUUr also offers options to 
+       connect to a Discord support channel, access the GitHub repository, 
+       or view the developer's GitHub profile.
+
+{red}═══════════════════════════════════════════════════════════════════════════════
+
+{red}Features:{cyan}
+       - Display help menu with available commands
+       - Clear web history, recycle bin, and temporary files
+       - Flush DNS cache
+       - Defragment the hard drive
+       - Retrieve disk, OS, and PC information
+       - Fetch detailed system information
+       - Connect to Discord for technical support
+       - Access the GitHub repository and developer's profile
+
+{red}═══════════════════════════════════════════════════════════════════════════════
+                    {red}Copyright (c) 2024 Lunar{cyan}
+
+{red}License:{cyan}
+       This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
+
+{red}Contact:{cyan}
+       For any questions or feedback, please reach out to:
+               GitHub: {red}https://github.com/Luunarr/WipeUUr{cyan}
+               Discord: {red}https://discord.gg/zACVRwCSve {reset}"""
     print(Info)
 
     space()
@@ -163,38 +218,49 @@ def helpW():
 
     space()
 
-    Help = f"""{h} {bright}{cyan} Commands Overview
-{red}═════════════════════════════════════{cyan}
+    Help = f"""{h} {bright}{gray}
 
-{cyan}       Basic Commands {red}:{cyan}
-help         {red}│{cyan}  Display this help menu
-exit         {red}│{cyan}  Exit WipeUUr
+             _          _       
+            | |        | |      
+            | |__   ___| |_ __  
+            | '_ \ / _ \ | '_ \ 
+            | | | |  __/ | |_) |
+            |_| |_|\___|_| .__/ 
+                         | |    
+                         |_|    
 
-{red}─────────────────────────────────────{cyan}
+           {cyan} Commands Overview
+{red}═══════════════════════════════════════════════{cyan}
 
-{cyan}         Cleaning {red}:{cyan}
-clear        {red}│{cyan}  Start cleaning
-clearhist    {red}│{cyan}  Clean web history
-clearbin     {red}│{cyan}  Empty the recycle bin
-flushdns     {red}│{cyan}  Clear DNS cache
-tempfiles    {red}│{cyan}  Delete temporary files
-defrag       {red}│{cyan}  Defragment the hard drive
+{cyan}              Basic Commands {red}:{cyan}
+       help         {red}│{cyan}  Display this help menu
+       exit         {red}│{cyan}  Exit WipeUUr
 
-{red}─────────────────────────────────────{cyan}
+{red}═══════════════════════════════════════════════{cyan}
 
-{cyan}     System Information {red}:{cyan}
-idisk        {red}│{cyan}  Get disk information
-ios          {red}│{cyan}  Get OS information
-fetch        {red}│{cyan}  Get PC information
-fullf        {red}│{cyan}  Get all information
+{cyan}               Cleaning {red}:{cyan}
+       clear        {red}│{cyan}  Start cleaning
+       clearhist    {red}│{cyan}  Clean web history
+       clearbin     {red}│{cyan}  Empty the recycle bin
+       flushdns     {red}│{cyan}  Clear DNS cache
+       tempfiles    {red}│{cyan}  Delete temporary files
+       defrag       {red}│{cyan}  Defragment the hard drive
 
-{red}─────────────────────────────────────{cyan}
+{red}═══════════════════════════════════════════════{cyan}
 
-{cyan}    Additional Resources {red}:{cyan}
-support      {red}│{cyan}  Get technical support on Discord
-info         {red}│{cyan}  Display system or application info
-github       {red}│{cyan}  Access the GitHub repository for this tool
-mygithub     {red}│{cyan}  Access my personal GitHub profile"""
+{cyan}           System Information {red}:{cyan}
+       idisk        {red}│{cyan}  Get disk information
+       ios          {red}│{cyan}  Get OS information
+       fetch        {red}│{cyan}  Get PC information
+       fullf        {red}│{cyan}  Get all information
+
+{red}═══════════════════════════════════════════════{cyan}
+
+{cyan}        Additional Resources {red}:{cyan}
+       support      {red}│{cyan}  Get technical support on Discord
+       info         {red}│{cyan}  Display system or application info
+       github       {red}│{cyan}  Access the GitHub repository for this tool
+       mygithub     {red}│{cyan}  Access my personal GitHub profile"""
 
     print(Help)
 
