@@ -1,7 +1,7 @@
 ##################################################
 #                    WipeUUr
 #                    By Lunar
-#                Version: 0.2#Wip
+#                Version: 0.4#Wip
 #
 #   Description:
 #   WipeUUr is a command-line utility designed to help users maintain their system's 
@@ -46,7 +46,7 @@ e = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.CYAN}~{Fore.WHITE}]{Styl
 l = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.CYAN}Link{Fore.WHITE}]{Style.RESET_ALL}"
 h = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.BLUE}?{Fore.WHITE}]{Style.RESET_ALL}"
 
-tagV = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.BLUE}0.2#Wip{Fore.WHITE}]{Style.RESET_ALL}"
+tagV = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.BLUE}0.4#Wip{Fore.WHITE}]{Style.RESET_ALL}"
 tagA = f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.WHITE}[{Fore.BLUE}By Lunar{Fore.WHITE}]{Style.RESET_ALL}"
 
 prompt = f"{i} {Style.BRIGHT}{Fore.CYAN}Wipe{Fore.RED}UU{Fore.CYAN}r {Fore.RED}:{Style.RESET_ALL} "
@@ -117,7 +117,7 @@ def infoW():
     Info = f"""{Style.BRIGHT}{Fore.CYAN}
                     WipeUUr
                     By Lunar
-                Version: {Fore.RED}0.2#Wip
+                Version: {Fore.RED}0.4#Wip
 
    {Fore.RED}Description:{Fore.CYAN}
    WipeUUr is a command-line utility designed to help users maintain their system's 
