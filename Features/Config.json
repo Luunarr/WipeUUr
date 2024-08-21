@@ -1,4 +1,5 @@
 {
     "Browsers": "Edge-Google-Firefox-OperaGX-Opera-Brave",
-    "Requirements": "True"
+    "Requirements": "False",
+    "Menu": "2"
 }
