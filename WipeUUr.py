@@ -75,10 +75,9 @@ try:
                 pass
         else:
             pass
-
-
 except:
     pass
+
 
 # ════════════════════════════ Principal Def ════════════════════════════════════
 
@@ -86,10 +85,11 @@ def MenuPrint(MenuChoice):
     MenuActions = {
         "1": asciiprint,
         "2": menuAscii_2001,
-        "3": menuAscii_2001,
+        "3": simpleMenuAsciiArt3,
     }
     action = MenuActions.get(MenuChoice, asciiprint)
     action()
+
 
 
 # ══════════ Cleaning ═════════════════
@@ -197,6 +197,112 @@ def Extras():
         elif Wi == "exit":
             break
 
+# ══════════ 22 Cleaning 22 ═════════════════
+
+def Cleaning22():
+    os.system("cls")
+    while True:
+        simpleCleaningAsciiArt3()
+        Wi = input(prompt)
+
+        if Wi in ["1", "Clearhist", "clearhist", "ch", "CH"]:
+            clearhistW()
+
+        elif Wi in ["cls", "clr"]:
+            os.system("cls")
+
+
+        elif Wi in ["2","clear","Clear"]:
+            clearbinW()    
+    
+        elif Wi in ["3","clearbin","Clearbin","cb"]:
+            clearbinW()
+
+        elif Wi in ["4","Tempfiles","tempfiles","tf"]:
+            clearbinW()
+
+        elif Wi in ["5","Flushdns","flushdns","fd"]:
+            clearbinW()
+
+        elif Wi in ["6","Defrag","defrag","df"]:
+            clearbinW()
+
+        elif Wi == "exit":
+            break
+
+
+# ══════════ 22 Sys Infos 22 ═════════════════
+
+def SysInfo22():
+    os.system("cls")
+    while True:
+        simpleSysInfoAsciiArt3()
+        Wi = input(prompt)
+
+        if Wi in ["cls", "clr"]:
+            os.system("cls")
+
+        elif Wi in ["1","fetch","Fetch", "ft"]: 
+            fetchW()    
+
+        elif Wi in ["2","fullf","Fullf", "FullFetch", "ff"]:
+            fullfW()   
+
+        elif Wi in ["3","MyOs","myos", "mo", "MO"]:
+            iosW()   
+
+        elif Wi in ["4","MyDisk","mydisk", "md"]:
+            idiskW()   
+
+        elif Wi in ["5","Network","network", "nk"]:
+            input()   
+
+        elif Wi == "exit":
+            break
+
+# ══════════ 22 Extras 22 ═════════════════
+
+def Extras22():
+    os.system("cls")
+    while True:
+        simpleExtraAsciiArt3()
+        Wi = input(prompt)
+
+        if Wi in ["cls", "clr"]:
+            os.system("cls")
+
+        elif Wi in ["1","info","Info", "inf"]: 
+            infoW()    
+
+        elif Wi in ["2","Github","github", "gh"]:
+            space()
+
+            webbrowser.open("https://github.com/Luunarr/WipeUUr")  
+            print(f"{l} {bright}{cyan}https://github.com/Luunarr/WipeUUr {reset}")
+
+            space() 
+
+        elif Wi in ["3","Support","support", "supp", "sp"]:
+
+            space()
+
+            webbrowser.open("https://discord.gg/zACVRwCSve")  
+            print(f"{l} {bright}{cyan}https://discord.gg/zACVRwCSve {reset}")
+
+            space() 
+
+        elif Wi in ["4","MyGithub","MYGITHUB", "mygithub", "mgh"]:
+            space()
+
+            webbrowser.open("https://github.com/Luunarr")    
+            print(f"{l} {bright}{cyan}https://github.com/Luunarr {reset}")
+
+            space()
+
+        elif Wi == "exit":
+            break
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def WipeUUr():  
@@ -280,6 +386,8 @@ def WipeUUr():
 
         elif Menu == "2":
             while True:
+                os.system("cls")
+                MenuPrint(Menu)
                 Wi = input(prompt)
 
                 if Wi in ["1", "Cleaning", "cleaning", "clng", "clg"]:
@@ -296,7 +404,19 @@ def WipeUUr():
 
         elif Menu == "3":
             while True:
-                Wi = input(prompt)
+                os.system("cls")
+                MenuPrint(Menu)
+                if Wi in ["1", "Cleaning", "cleaning", "clng", "clg"]:
+                    Cleaning22()
+
+                elif Wi in ["2", "SysInfo", "sysinfo", "si", "SI"]:
+                    SysInfo22()
+
+                elif Wi in ["3", "Extras", "extras", "Ex", "ex"]:
+                    Extras22()
+
+                elif Wi in ["exit", "quitter", "leave"]:
+                    exit()
 
 
 
