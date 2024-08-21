@@ -47,17 +47,6 @@ try:
 except:
     pass
 
-p = f"{reset}{bright}{Fore.WHITE}[{green}+{Fore.WHITE}]{reset}"
-m = f"{reset}{bright}{Fore.WHITE}[{red}-{Fore.WHITE}]{reset}"
-c = f"{reset}{bright}{Fore.WHITE}[{yellow}/{Fore.WHITE}]{reset}"
-i = f"{reset}{bright}{Fore.WHITE}[{magenta}>{Fore.WHITE}]{reset}"
-e = f"{reset}{bright}{Fore.WHITE}[{cyan}~{Fore.WHITE}]{reset}"
-l = f"{reset}{bright}{Fore.WHITE}[{cyan}Link{Fore.WHITE}]{reset}"
-h = f"{reset}{bright}{Fore.WHITE}[{blue}?{Fore.WHITE}]{reset}"
-
-tagV = f"{reset}{bright}{Fore.WHITE}[{blue}0.5#Wip{Fore.WHITE}]{reset}"
-tagA = f"{reset}{bright}{Fore.WHITE}[{blue}By Lunar{Fore.WHITE}]{reset}"
-
 prompt = f"{i} {bright}{cyan}Wipe{red}UU{cyan}r {red}${reset} "
 
 asciiW = f"""{bright}{cyan}     _ _ _ _         {red}_____ _____     
