@@ -35,8 +35,6 @@
 #   Discord: https://discord.gg/zACVRwCSve
 ##################################################
 
-#    input(f"{i} {bright}{cyan}Press Enter to continue...{reset}")
-
 from Fonction.Utils import *
 import json
 init(autoreset=True)
