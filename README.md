@@ -16,7 +16,7 @@
 - **Explore GitHub Repository**: Access source code and documentation.
 - **Visit Personal GitHub Profile**: Discover additional projects and contributions.
 
-Created by Lunar, WipeUUr is currently in its early development stage (version 0.1#Wip).
+Created by Lunar, WipeUUr is currently in its early development stage (version 0.5#Wip).
 
 ## Features
 
