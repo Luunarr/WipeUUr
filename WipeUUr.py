@@ -1,4 +1,4 @@
-# ═══════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════════════════════════════════════════════
 #
 #      _    _ _            _   _ _   _                 _              _ 
 #     | |  | (_)          | | | | | | |               | |            | |
@@ -11,49 +11,18 @@
 #
 #                          Version: 0.5.5#Wip
 #
-# ═══════════════════════════════════════════════════════════════════════════════
-#
-#                         Owner : @Lunar
-#                   Collaborator : @NomFascinant
-#
-# ═══════════════════════════════════════════════════════════════════════════════
-#
-# Description:
-#        WipeUUr is a command-line utility designed to help users maintain 
-#        their system's cleanliness. Although still in its early development 
-#        phase, it offers a variety of functions to keep your system running 
-#        smoothly. WipeUUr allows you to clear browser histories, empty the 
-#        recycle bin, flush the DNS cache, clean temporary files, and defragment 
-#        your hard drive. Additionally, it provides commands to retrieve disk 
-#        and operating system information. For users seeking technical support 
-#        or more information about the tool, WipeUUr also offers options to 
-#        connect to a Discord support channel, access the GitHub repository, 
-#        or view the developer's GitHub profile.
-#
-# ═══════════════════════════════════════════════════════════════════════════════
-#
-# Features:
-#        - Display help menu with available commands
-#        - Clear web history, recycle bin, and temporary files
-#        - Flush DNS cache
-#        - Defragment the hard drive
-#        - Retrieve disk, OS, and PC information
-#        - Fetch detailed system information
-#        - Connect to Discord for technical support
-#        - Access the GitHub repository and developer's profile
-#
-# ═══════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════════════════════════════════════════════
 #                     Copyright (c) 2024 Lunar
 #
 # License:
 #        This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
 #
-# Contact:
-#        For any questions or feedback, please reach out to:
-#                GitHub: https://github.com/Luunarr/WipeUUr
-#                Discord: https://discord.gg/zACVRwCSve
-#
-# ═══════════════════════════════════════════════════════════════════════════════
+# Contact:                                                                                         #
+#        For any questions or feedback, please reach out to:                                       #
+#                GitHub: https://github.com/Luunarr/WipeUUr                                        #
+#                Discord: https://discord.gg/zACVRwCSve                                            #
+#                                                                                                  #
+# ══════════════════════════════════════════════════════════════════════════════════════════════════
 
 
 from Features.Utils import *
