@@ -108,7 +108,6 @@ def Cleaning():
         elif Wi in ["cls", "clr"]:
             os.system("cls")
 
-
         elif Wi in ["2","clear","Clear"]:
             clearbinW()    
             input()
@@ -136,7 +135,6 @@ def Cleaning():
 
         elif Wi == "exit":
             break
-
 
 # ══════════ Sys Infos ═════════════════
 
