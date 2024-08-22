@@ -13,10 +13,10 @@
 #
 # ══════════════════════════════════════════════════════════════════════════════════════════════════
 #                     Copyright (c) 2024 Lunar
-#
+#                                                                                                  #
 # License:
-#        This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
-#
+#        This project is licensed under the Apache License 2.0 - see the LICENSE file for details. #
+#                                                                                                  #
 # Contact:                                                                                         #
 #        For any questions or feedback, please reach out to:                                       #
 #                GitHub: https://github.com/Luunarr/WipeUUr                                        #
