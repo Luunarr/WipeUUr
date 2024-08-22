@@ -39,60 +39,51 @@ def infoW():
 
     space()
 
-    Info = f"""{bright}{gray}
-     _    _ _            _   _ _   _                 _              _ 
-    | |  | (_)          | | | | | | |               | |            | |
-    | |  | |_ _ __   ___| | | | | | |_ __   ______  | |_ ___   ___ | |
-    | |/\| | | '_ \ / _ \ | | | | | | '__| |______| | __/ _ \ / _ \| |
-    \  /\  / | |_) |  __/ |_| | |_| | |             | || (_) | (_) | |
-     \/  \/|_| .__/ \___|\___/ \___/|_|              \__\___/ \___/|_|
-             | |                                                      
-             |_|                                                      
+    Info = f"""{h}{Style.BRIGHT}{cyan}                                     ╔═════════════╗
+                                        ║  WipeUUr    ╠══════════════════════════════╗
+                                        ╚══╦══════════╝                              ║
+                                           ║  {cyan}Version: {red}0.5.5#Wip{cyan}                     ║
+                                           ║  {cyan}Owner : {mention}{red}Lunar{cyan}                         ║
+                                           ║  {cyan}Collaborator : {mention}{red}NomFascinant{cyan}           ║
+                                           ║                                         ║
+                         ╔═════════════════╩═════════════════════════════════════════╩══╗
+                         ║  {red}Description:{cyan}                                                ║
+                         ║     {cyan}WipeUUr is a command-line utility designed to            ║
+                         ║     {cyan}help users maintain their system's cleanliness.          ║
+                         ║     {cyan}Although still in its early development phase,           ║
+                         ║     {cyan}it offers a variety of functions to keep your            ║
+                         ║     {cyan}system running smoothly. WipeUUr allows you to           ║
+                         ║     {cyan}clear browser histories, empty the recycle bin,          ║
+                         ║     {cyan}flush the DNS cache, clean temporary files,              ║
+                         ║     {cyan}and defragment your hard drive. Additionally,            ║
+                         ║     {cyan}it provides commands to retrieve disk and OS             ║
+                         ║     {cyan}information. For users seeking technical support         ║
+                         ║     {cyan}or more information about the tool, WipeUUr              ║
+                   ╔═════╣     {cyan}also offers options to connect to a Discord              ║
+                   ║     ║     {cyan}support channel, access the GitHub repository,           ║
+                   ║     ║     {cyan}or view the developer's GitHub profile.                  ║
+                   ║     ╚═══════════════════════════════════════════════╦══════════════╩═══════════════════════════════════════════════╗
+                   ║                                                     ║  {red}Features:{cyan}                                                   ║
+                   ║                                                     ║     {cyan}- Display help menu with available commands              ║
+                   ║                                                     ║     {cyan}- Clear web history, recycle bin, and temporary files    ║
+                   ║                                                     ║     {cyan}- Flush DNS cache                                        ║
+                   ║                                                     ║     {cyan}- Defragment the hard drive                              ║
+                   ║                                                     ║     {cyan}- Retrieve disk, OS, and PC information                  ║
+                   ║                                                     ║     {cyan}- Fetch detailed system information                      ║
+                   ║                                                     ║     {cyan}- Connect to Discord for technical support               ║
+                   ║                                                     ║     {cyan}- Access the GitHub repository and developer's profile   ║
+    ╔══════════════╩═══════════════════════════════════════════════╗     ╚═══════════════════════════════════════════════════════╦══════╝
+    ║  {red}License:{cyan}                                                    ║                                                             ║
+    ║     {cyan}This project is licensed under the Apache License        ║                                                             ║
+    ║     {cyan}2.0 - see the LICENSE file for details.                  ║                ╔════════════════════════════════════════════╩═════════════════╗
+    ╚═══════════════════════════════════════════════╦══════════════╝                ║  {red}Contact:{cyan}                                                    ║
+                                                    ║                               ║     {cyan}For any questions or feedback, please reach out to:      ║
+                                                    ╚═══════════════════════════════╣        {cyan}GitHub: {red}https://github.com/Luunarr/WipeUUr{cyan}            ║
+                                                                                    ║        {cyan}Discord: {red}https://discord.gg/zACVRwCSve{cyan}                ║
+                                                                                    ╚══════════════════════════════════════════════════════════════╝"""
+    info = Info.replace("═", f"{cyan}═{reset}").replace("╩", f"{cyan}╩{reset}").replace("╦", f"{cyan}╦{reset}").replace("║", f"{cyan}║{reset}").replace("╣", f"{cyan}╣{reset}").replace("╗", f"{red}╗{reset}").replace("╝", f"{red}╝{reset}").replace("╚", f"{red}╚{reset}").replace("╔", f"{red}╔{reset}").replace("╬", f"{cyan}╬{reset}").replace("╠", f"{cyan}╠{reset}")
 
-                         {cyan}Version: {red}0.5.5#Wip
-
-{red}═══════════════════════════════════════════════════════════════════════════════
-
-{cyan}                        Owner : {mention}{bright}{red}Lunar
-{cyan}                  Collaborator : {mention}{bright}{red}NomFascinant
-
-{red}═══════════════════════════════════════════════════════════════════════════════
-
-{red}Description:{cyan}
-       WipeUUr is a command-line utility designed to help users maintain 
-       their system's cleanliness. Although still in its early development 
-       phase, it offers a variety of functions to keep your system running 
-       smoothly. WipeUUr allows you to clear browser histories, empty the 
-       recycle bin, flush the DNS cache, clean temporary files, and defragment 
-       your hard drive. Additionally, it provides commands to retrieve disk 
-       and operating system information. For users seeking technical support 
-       or more information about the tool, WipeUUr also offers options to 
-       connect to a Discord support channel, access the GitHub repository, 
-       or view the developer's GitHub profile.
-
-{red}═══════════════════════════════════════════════════════════════════════════════
-
-{red}Features:{cyan}
-       - Display help menu with available commands
-       - Clear web history, recycle bin, and temporary files
-       - Flush DNS cache
-       - Defragment the hard drive
-       - Retrieve disk, OS, and PC information
-       - Fetch detailed system information
-       - Connect to Discord for technical support
-       - Access the GitHub repository and developer's profile
-
-{red}═══════════════════════════════════════════════════════════════════════════════
-                    {red}Copyright (c) 2024 Lunar{cyan}
-
-{red}License:{cyan}
-       This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
-
-{red}Contact:{cyan}
-       For any questions or feedback, please reach out to:
-               GitHub: {red}https://github.com/Luunarr/WipeUUr{cyan}
-               Discord: {red}https://discord.gg/zACVRwCSve {reset}"""
-    print(Info)
+    print(info)
 
     space()
 
@@ -103,31 +94,31 @@ def helpW():
 
     space()
 
-    Help = f"""                                        ╔═════════════╗
+    Help = f"""{h}                                     ╔═════════════╗
                                         ║ Cleaning    ╠════════════════════════════════╗
                                         ╚══╦══════════╝                                ║
-                                           ╠  clear      │  Start cleaning             ║
-                                           ╠  clearhist  │  Clean web history          ║
-                                           ╠  clearbin   │  Empty the recycle bin      ║
-                                           ╠  flushdns   │  Clear DNS cache            ║
-                           ║               ╠  tempfiles  │  Delete temporary files     ║
-                         ╔═╩═══════════╗   ╠  defrag     │  Defragment the hard drive  ║
+                                           ╠  {cyan}clear      {red}│  {cyan}Start cleaning             ║
+                                           ╠  {cyan}clearhist  {red}│  {cyan}Clean web history          ║
+                                           ╠  {cyan}clearbin   {red}│  {cyan}Empty the recycle bin      ║
+                                           ╠  {cyan}flushdns   {red}│  {cyan}Clear DNS cache            ║
+                           ║               ╠  {cyan}tempfiles  {red}│  {cyan}Delete temporary files     ║
+                         ╔═╩═══════════╗   ╠  {cyan}defrag     {red}│  {cyan}Defragment the hard drive  ║
                          ║             ║   ║                                           ║
                          ╚════════╦════╝   ║   ╔══════════════╗                ╔═══════╩═════╗
                                   ╚════════╬═══╣   WipeUUr    ╠═════════════╦══╣ Sys Info    ╠════════════════╗
                                            ║   ╚╦══════╦══════╝             ║  ╚═════════════╝                ║
-                          ╔════════════════╝    ║      ║                    ╠ myntw  │  Get Ntw information   ║
-               ╔══════════╩══╗                  ║      ╠  {cyan}By {mention}{red}Lunar         ╠ idisk  │  Get disk information  ║
-        ╔══════╣ soon        ╠══╦═════════════╗ ║      ║                    ╠ ios    │  Get OS information    ║
-        ║      ╚═════════════╝  ║ Basic       ╠═╝      ║  ╔═════════════╗   ╠ fetch  │  Get PC information    ║
-        ║                       ╚═════╦═══════╝        ╚══╣ Extras      ║   ╠ fullf  │  Get all information   ║
+                          ╔════════════════╝    ║      ║                    ╠ {cyan}myntw  {red}│  {cyan}Get Ntw information   ║
+               ╔══════════╩══╗                  ║      ╠  {cyan}By {mention}{red}Lunar         ╠ idisk  {red}│  {cyan}Get disk information  ║
+        ╔══════╣ soon        ╠══╦═════════════╗ ║      ║                    ╠ {cyan}ios    {red}│  {cyan}Get OS information    ║
+        ║      ╚═════════════╝  ║ Basic       ╠═╝      ║  ╔═════════════╗   ╠ {cyan}fetch  {red}│  {cyan}Get PC information    ║
+        ║                       ╚═════╦═══════╝        ╚══╣ Extras      ║   ╠ {cyan}fullf  {red}│  {cyan}Get all information   ║
         ║                             ║                   ╚═════════╦═══╩═══╩═════════════════════════════════╩═════════════════╗    
         ║                             ╣                             ║                                                           ║ 
-        ║      exit  │  Exit WipeUUr  ╣                             ╠            │                                              ║
-        ║                             ╣                             ╠  support   │  Get technical support on Discord            ║
-        ║                             ║                             ╠  info      │  Display system or application info          ║
-        ╚═════════════════════════════╝                             ╠  github    │  Access the GitHub repository for this tool  ║
-                                                                    ╠  mygithub  │  Access my personal GitHub profile           ║
+        ║      {cyan}exit  {red}│  {cyan}Exit WipeUUr  ╣                             ╠            {red}│                                              ║
+        ║                             ╣                             ╠  support   {red}│  {cyan}Get technical support on Discord            ║
+        ║                             ║                             ╠  info      {red}│  {cyan}Display system or application info          ║
+        ╚═════════════════════════════╝                             ╠  github    {red}│  {cyan}Access the GitHub repository for this tool  ║
+                                                                    ╠  mygithub  {red}│  {cyan}Access my personal GitHub profile           ║
                                                                     ║                                                           ║
                                                                     ╚═══════════════════════════════════════════════════════════╝"""
     help = Help.replace("═", f"{cyan}═{reset}").replace("╩", f"{cyan}╩{reset}").replace("╦", f"{cyan}╦{reset}").replace("║", f"{cyan}║{reset}").replace("╣", f"{cyan}╣{reset}").replace("╗", f"{red}╗{reset}").replace("╝", f"{red}╝{reset}").replace("╚", f"{red}╚{reset}").replace("╔", f"{red}╔{reset}").replace("╬", f"{cyan}╬{reset}").replace("╠", f"{cyan}╠{reset}")
