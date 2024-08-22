@@ -12,9 +12,9 @@
 #                          Version: 0.5.5#Wip
 #
 # ══════════════════════════════════════════════════════════════════════════════════════════════════
-#                     Copyright (c) 2024 Lunar
+# Copyright (c) 2024 Lunar                                                                         #
 #                                                                                                  #
-# License:
+# License:                                                                                         #
 #        This project is licensed under the Apache License 2.0 - see the LICENSE file for details. #
 #                                                                                                  #
 # Contact:                                                                                         #
