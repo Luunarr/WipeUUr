@@ -106,7 +106,7 @@ def Cleaning():
             os.system("cls")
 
         elif Wi in ["cls", "clr"]:
-            os.system("cls")
+            clear()
 
         elif Wi in ["2","clear","Clear"]:
             clearbinW()    
